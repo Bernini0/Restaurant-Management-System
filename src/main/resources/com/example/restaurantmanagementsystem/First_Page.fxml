@@ -1,15 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="750.0" prefWidth="1310.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.Login_to_Dashboard_Controller">
     <children>
-        <Button mnemonicParsing="false" onAction="#login" prefHeight="32.0" prefWidth="73.0" text="Log In" />
-        <Button mnemonicParsing="false" onAction="#login" prefHeight="34.0" prefWidth="74.0" text="Sign Up" />
+        <AnchorPane fx:id="mainloginpane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #151515;">
+            <children>
+                <HBox prefHeight="600.0" prefWidth="702.0">
+                    <children>
+                        <ImageView fitHeight="600.0" fitWidth="364.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@images/login_bg.jpg" />
+                            </image>
+                        </ImageView>
+                        <VBox prefHeight="600.0" prefWidth="340.0">
+                            <children>
+                                <Label fx:id="welcome" contentDisplay="CENTER" prefHeight="34.0" prefWidth="318.0" text="Sign up for an account!" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Rockwell Bold" size="24.0" />
+                                    </font>
+                                    <effect>
+                                        <Bloom />
+                                    </effect>
+                                    <VBox.margin>
+                                        <Insets left="20.0" top="110.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label contentDisplay="CENTER" layoutX="30.0" layoutY="40.0" prefHeight="22.0" prefWidth="318.0" text="Welcome to the team!" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Rockwell Bold" size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="20.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label fx:id="toe_lable" contentDisplay="CENTER" layoutX="30.0" layoutY="84.0" prefHeight="22.0" prefWidth="318.0" text="Type of Employee" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Rockwell" size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="20.0" top="40.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <ChoiceBox prefHeight="26.0" prefWidth="202.0">
+                                    <VBox.margin>
+                                        <Insets left="20.0" right="20.0" top="5.0" />
+                                    </VBox.margin>
+                                </ChoiceBox>
+                                <Label fx:id="email_label" contentDisplay="CENTER" layoutX="30.0" layoutY="217.0" prefHeight="22.0" prefWidth="318.0" text="Email Address" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Rockwell" size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="20.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <TextField fx:id="email" layoutX="30.0" layoutY="250.0" prefHeight="26.0" prefWidth="306.0" promptText="Enter email address here">
+                                    <cursor>
+                                        <Cursor fx:constant="TEXT" />
+                                    </cursor>
+                                    <VBox.margin>
+                                        <Insets left="20.0" right="20.0" top="5.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <Label fx:id="username_label" contentDisplay="CENTER" layoutX="10.0" layoutY="276.0" prefHeight="22.0" prefWidth="318.0" text="Username" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Rockwell" size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="20.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <TextField fx:id="username" layoutX="10.0" layoutY="299.0" prefHeight="26.0" prefWidth="306.0" promptText="Enter username here">
+                                    <cursor>
+                                        <Cursor fx:constant="TEXT" />
+                                    </cursor>
+                                    <VBox.margin>
+                                        <Insets left="20.0" right="20.0" top="5.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <Label fx:id="pw_label" contentDisplay="CENTER" prefHeight="22.0" prefWidth="318.0" text="Password" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="Rockwell" size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="20.0" top="10.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <PasswordField fx:id="password" promptText="Enter password here">
+                                    <VBox.margin>
+                                        <Insets left="20.0" right="20.0" top="5.0" />
+                                    </VBox.margin>
+                                    <cursor>
+                                        <Cursor fx:constant="TEXT" />
+                                    </cursor>
+                                </PasswordField>
+                                <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F76E11;" text="Sign up" textFill="#fffffe">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="130.0" top="30.0" />
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
     </children>
-</VBox>
+</StackPane>
