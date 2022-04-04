@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.Login_to_Dashboard_Controller">
+<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Sign_Up_to_Login">
     <children>
         <AnchorPane fx:id="mainloginpane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #151515;">
             <children>
@@ -109,7 +109,7 @@
                                         <Cursor fx:constant="TEXT" />
                                     </cursor>
                                 </PasswordField>
-                                <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F76E11;" text="Sign up" textFill="#fffffe">
+                                <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#back_to_login" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F76E11;" text="Sign up" textFill="#fffffe">
                                     <font>
                                         <Font name="System Bold" size="14.0" />
                                     </font>

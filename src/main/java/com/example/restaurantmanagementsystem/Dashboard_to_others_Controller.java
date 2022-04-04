@@ -19,26 +19,38 @@ public class Dashboard_to_others_Controller {
     public void go_to_onside_order(MouseEvent e) throws IOException{
         root =  FXMLLoader.load(getClass().getResource("Onsite_Orders_Page.fxml"));
         Show.dis_play(root,e);
+//        Show s = new Show();
+//        s.dis_play(root,e);
     }
     public void go_to_online_order(MouseEvent e) throws IOException{
         root =  FXMLLoader.load(getClass().getResource("Online_Order_Page.fxml"));
         Show.dis_play(root,e);
+//        Show s = new Show();
+//        s.dis_play(root,e);
     }
     public void go_to_sales_insight(MouseEvent e) throws IOException{
         root =  FXMLLoader.load(getClass().getResource("Sales_Insight_Page.fxml"));
-        Show.dis_play(root,e);
+//        Show.dis_play(root,e);
+        Show s = new Show();
+        s.dis_play(root,e);
     }
     public void go_to_menu_page(MouseEvent e) throws IOException{
         root =  FXMLLoader.load(getClass().getResource("Menu_Page.fxml"));
         Show.dis_play(root,e);
+//        Show s = new Show();
+//        s.dis_play(root,e);
     }
     public void go_to_account_page(MouseEvent e) throws IOException{
         root =  FXMLLoader.load(getClass().getResource("Account_Page.fxml"));
         Show.dis_play(root,e);
+//        Show s = new Show();
+//        s.dis_play(root,e);
     }
     public void go_to_logout(MouseEvent e) throws IOException{
-        root =  FXMLLoader.load(getClass().getResource("First_Page.fxml"));
+        root =  FXMLLoader.load(getClass().getResource("Sign_Up.fxml"));
         Show.dis_play(root,e);
+//        Show s = new Show();
+//        s.dis_play(root,e);
     }
 
 }

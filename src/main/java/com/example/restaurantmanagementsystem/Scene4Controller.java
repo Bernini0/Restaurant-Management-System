@@ -15,5 +15,7 @@ public class Scene4Controller {
     public void go_back_to_dashboard(ActionEvent e) throws IOException {
         root =  FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         Show.dis_play(root,e);
+//        Show s = new Show();
+//        s.dis_play(root,e);
     }
 }

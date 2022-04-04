@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.Login_to_Dashboard_Controller">
+<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.HelloController">
    <children>
       <AnchorPane fx:id="mainloginpane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #151515;">
          <children>
@@ -90,7 +90,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Label>
-                        <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F76E11;" text="Login" textFill="#fffffe">
+                        <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#go_to_Dashboard" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #F76E11;" text="Login" textFill="#fffffe">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
@@ -109,7 +109,7 @@
                               <Font name="Rockwell" size="13.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="489.0" prefHeight="18.0" prefWidth="339.0" text="SIGN UP!" textFill="#dc9576">
+                        <Label alignment="CENTER" layoutX="10.0" layoutY="489.0" onMouseClicked="#go_to_Signup" prefHeight="18.0" prefWidth="339.0" text="SIGN UP!" textFill="#dc9576">
                            <font>
                               <Font name="Rockwell" size="13.0" />
                            </font>

@@ -1,5 +1,6 @@
 package com.example.restaurantmanagementsystem;
 
+import javafx.event.Event;
 import javafx.scene.control.Button;
 import javafx.animation.*;
 import javafx.event.ActionEvent;
@@ -37,6 +38,7 @@ public class common_methods {
     private boolean loading = false;
 
 
+    
     //handles the event for closing a window
     public void handleClose(ActionEvent event){
         Node source = (Node) event.getSource();
@@ -248,7 +250,7 @@ public class common_methods {
     private void loadLogin(){
         try {
             loggedout = true;
-            Parent parent = FXMLLoader.load(getClass().getResource("First_Page.fxml"));
+            Parent parent = FXMLLoader.load(getClass().getResource("Sign_Up.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(parent);
             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
