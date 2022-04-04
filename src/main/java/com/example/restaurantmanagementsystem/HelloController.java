@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -59,6 +60,7 @@ public class HelloController {
     String actual_user = "Tasnim";
     String actual_pass = "1234";
     public void go_to_Dashboard(MouseEvent event) throws IOException {
+        names.add(new Pair<String,String>(actual_user,actual_pass));
         String name = username.getText();
         String pass = password.getText();
         System.out.println(name);
@@ -67,9 +69,12 @@ public class HelloController {
         for(int i = 0; i < names.size(); i++) {
             Pair<String,String> nem = names.get(i);
             if (name.equals(nem.getKey()) && pass.equals(nem.getValue())) {
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 yes = true;
-                root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
-                Show.dis_play(root, event);
+//                root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+//                Show.dis_play(root, event);
+                Show s = new Show();
+                s.display(stage,"dashboard.fxml");
             }
         }
         if(yes == false){
@@ -83,8 +88,11 @@ public class HelloController {
 //        s.dis_play(root,e);
     }
     public void go_to_Signup(MouseEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Sign_Up.fxml"));
-        Show.dis_play(root,event);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//        root = FXMLLoader.load(getClass().getResource("Sign_Up.fxml"));
+        Show s = new Show();
+        s.display(stage,"Sign_Up.fxml");
+//        Show.dis_play(root,event);
 //        Show s = new Show();
 //        s.dis_play(root,e);
     }

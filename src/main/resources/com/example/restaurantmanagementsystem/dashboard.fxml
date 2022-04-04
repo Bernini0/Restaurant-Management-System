@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Dashboard_to_others_Controller">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1310.0">
          <left>
@@ -52,7 +52,7 @@
                               <Image url="@images/onsite_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="onsite_orders" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Onsite Orders">
+                        <Button fx:id="onsite_orders" mnemonicParsing="false" onMouseClicked="#go_to_onsite_order" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Onsite Orders">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -69,7 +69,7 @@
                               <Image url="@images/online_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="online_orders" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Online Orders">
+                        <Button fx:id="online_orders" mnemonicParsing="false" onMouseClicked="#go_to_online_order" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Online Orders">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -86,7 +86,7 @@
                               <Image url="@images/sales.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="sales" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Sales Insight">
+                        <Button fx:id="sales" mnemonicParsing="false" onMouseClicked="#go_to_sales_insight" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Sales Insight">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -103,7 +103,7 @@
                               <Image url="@images/menu.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="menu1" layoutX="51.0" layoutY="18.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Menu">
+                        <Button fx:id="menu1" layoutX="51.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_menu_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Menu">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -120,7 +120,7 @@
                               <Image url="@images/account.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Account">
+                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_account_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Account">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -137,7 +137,7 @@
                               <Image url="@images/logout.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="logout" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Log Out">
+                        <Button fx:id="logout" mnemonicParsing="false" onMouseClicked="#go_to_logout" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Log Out">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
