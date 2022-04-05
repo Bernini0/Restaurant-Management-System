@@ -16,7 +16,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< Updated upstream:src/main/resources/com/example/restaurantmanagementsystem/Sign_Up.fxml
 <StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Sign_Up_to_Login">
+=======
+<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Login_to_Dashboard_Controller">
+>>>>>>> Stashed changes:src/main/resources/com/example/restaurantmanagementsystem/First_Page.fxml
     <children>
         <AnchorPane fx:id="mainloginpane" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: #151515;">
             <children>

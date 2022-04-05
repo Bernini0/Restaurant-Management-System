@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class Menu {
+    public static final String CURRENCY = "$";
+
     public Integer number_of_dishes=0;
     public List<Dish> all_dishes = new ArrayList<Dish>();
     public Map<String,Integer> prices =new HashMap<String,Integer>();
@@ -31,7 +33,7 @@ public class Menu {
         Dish current_dish;
         for(int i=0;i<number_of_dishes;i++) {
             current_dish = all_dishes.get(i);
-            if (current_dish.name.equals(name)) {
+            if (current_dish.getName().equals(name)) {
                 current_dish.update(new_price);
             }
         }
