@@ -68,7 +68,7 @@ public class Sign_Up_to_Login {
         Pair<String,String> pair = new Pair<String,String>(name,pass);
         names.add(pair);
         Show s = new Show();
-        s.display(stage,"Login_Page");
+        s.display(stage,"Login_Page.fxml");
 //        Show.dis_play(p,event);
 //        Show s = new Show();
 //        s.dis_play(root,e);
