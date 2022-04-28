@@ -81,7 +81,7 @@ public class HelloController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);// line 1
             alert.setTitle("Information Dialog Box");// line 2
             alert.setHeaderText("Incorrect Credential");// line 3
-            alert.setContentText("This is body section to write some info!");// line 4
+            alert.setContentText("If you forgot your Pass contact admin");// line 4
             alert.showAndWait();
         }
 //        Show s = new Show();

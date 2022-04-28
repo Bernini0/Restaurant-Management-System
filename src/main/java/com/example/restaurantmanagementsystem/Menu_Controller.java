@@ -107,23 +107,28 @@ public class Menu_Controller implements Initializable {
                 "    -fx-background-radius: 30;");
     }
 
-    @Override
+
     public void initialize(URL location, ResourceBundle resources) {
         dishes.addAll(getData());
         if (dishes.size() > 0) {
             setChosenDish(dishes.get(0));
-            control = this::setChosenDish;
+            control = new click_control() {
+                @Override
+                public void on_click(Dish dish) {
+                    setChosenDish(dish);
+                }
+            };
         }
         int column = 0;
         int row = 1;
         try {
             for (int i = 0; i < dishes.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/views/item.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("resources/com/example/restaurantmanagementsystem/Dish.fxml"));
                 AnchorPane anchorPane = fxmlLoader.load();
 
-                Dish_Controller itemController = fxmlLoader.getController();
-                itemController.setData(dishes.get(i),control);
+                Dish_Controller dishController = fxmlLoader.getController();
+                dishController.setData(dishes.get(i),control);
 
                 if (column == 3) {
                     column = 0;
