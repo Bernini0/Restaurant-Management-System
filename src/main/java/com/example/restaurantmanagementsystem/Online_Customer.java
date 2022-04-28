@@ -7,6 +7,7 @@ public class Online_Customer extends Offline_Customer{
 
     @Override
     public Order order(Map<Dish, Integer> order_sum, Menu menu){
+        discount=0;
         Order new_order=super.order(order_sum,menu);
         new_order.changeIsOnline();
         return new_order;
