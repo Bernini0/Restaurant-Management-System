@@ -38,6 +38,9 @@ class Order {
     public Boolean getIsDelivered (){
         return isDelivered;
     }
+    public Boolean getIsOnline(){
+        return isOnline;
+    }
     public void changeIsOnline() { isOnline=!isOnline; }
 
 }

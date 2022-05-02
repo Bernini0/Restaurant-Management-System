@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Dashboard_to_others_Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Orders_Overview_Controller">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1310.0">
          <left>
@@ -28,7 +35,7 @@
                               <Image url="@images/app.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="dashboard" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
+                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#go_back_to_dashboard" onMouseClicked="#go_back_to_dashboard" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -45,7 +52,7 @@
                               <Image url="@images/onsite_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="onsite_orders" mnemonicParsing="false" onMouseClicked="#go_to_onsite_order" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Take Orders">
+                        <Button fx:id="onsite_orders" mnemonicParsing="false" onMouseClicked="#go_to_take_orders" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Take Orders">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -62,7 +69,7 @@
                               <Image url="@images/online_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="online_orders" mnemonicParsing="false" onMouseClicked="#go_to_online_order" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
+                        <Button fx:id="online_orders" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -222,7 +229,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="\$ 2578">
+                                    <Label fx:id="sales1" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="\$ 2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -245,7 +252,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="sales1" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="120">
+                                    <Label fx:id="sales2" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="120">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -268,7 +275,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="sales11" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="15">
+                                    <Label fx:id="sales3" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="15">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -291,7 +298,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="sales111" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="146.0" text="24/03/2022">
+                                    <Label fx:id="date" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="146.0" text="24/03/2022">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -335,7 +342,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money1" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="\$ 2578">
+                                    <Label fx:id="order11" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="\$ 2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -358,7 +365,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money11" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
+                                    <Label fx:id="order12" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -381,7 +388,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money12" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
+                                    <Label fx:id="order13" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -404,7 +411,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money13" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
+                                    <Label fx:id="order14" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -431,7 +438,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money11" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
+                                    <Label fx:id="order21" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -454,7 +461,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money111" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
+                                    <Label fx:id="order22" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -477,7 +484,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money121" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
+                                    <Label fx:id="order23" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>
@@ -500,7 +507,7 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="money131" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
+                                    <Label fx:id="order24" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="137.0" text="2578">
                                        <font>
                                           <Font name="System Bold" size="24.0" />
                                        </font>

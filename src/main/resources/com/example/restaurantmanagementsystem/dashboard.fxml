@@ -52,7 +52,7 @@
                               <Image url="@images/onsite_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="onsite_orders" mnemonicParsing="false" onMouseClicked="#go_to_onsite_order" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Take Orders">
+                        <Button fx:id="onsite_orders" mnemonicParsing="false" onMouseClicked="#go_to_take_orders" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Take Orders">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -69,7 +69,7 @@
                               <Image url="@images/online_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="online_orders" mnemonicParsing="false" onMouseClicked="#go_to_online_order" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
+                        <Button fx:id="online_orders" mnemonicParsing="false" onMouseClicked="#go_to_Orders_Overview" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
