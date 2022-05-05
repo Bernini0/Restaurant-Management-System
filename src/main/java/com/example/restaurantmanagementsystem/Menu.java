@@ -8,9 +8,16 @@ import java.util.Map;
 public class Menu {
     public static final String CURRENCY = "$";
 
-    public Integer number_of_dishes=0;
-    public List<Dish> all_dishes = new ArrayList<Dish>();
-    public Map<String,Integer> prices =new HashMap<String,Integer>();
+    public Integer number_of_dishes;
+    public List<Dish> all_dishes;
+    public Map<String,Integer> prices;
+
+    public Menu(){
+        number_of_dishes=0;
+        all_dishes = new ArrayList<Dish>();
+        prices =new HashMap<String,Integer>();
+
+    }
 
     public void add_dish(String name, Integer price){
         Dish new_dish = new Dish(name,price);

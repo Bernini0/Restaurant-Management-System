@@ -3,7 +3,12 @@ package com.example.restaurantmanagementsystem;
 import java.util.Map;
 
 public class Online_Customer extends Offline_Customer{
-    String Address;
+    String address;
+
+    public Online_Customer(Integer id, Integer discount, String address){
+        super(id,discount);
+        this.address=address;
+    }
 
     @Override
     public Order order(Map<Dish, Integer> order_sum, Menu menu){

@@ -7,21 +7,22 @@ public class Order_collection {
     public Integer order_count;
     public Integer pending_count;
     public Map<Integer,Order> all_orders,pending_orders;
+
+
     public Order_collection(){
         order_count = 0;
         pending_count = 0;
         all_orders = new HashMap<Integer,Order>();
         pending_orders = new HashMap<Integer,Order>();
     }
+
     void add_order(Order new_order){
         order_count++;
         pending_count++;
         all_orders.put(new_order.id, new_order);
         pending_orders.put(new_order.id,new_order);
     }
-//    public Map<Integer,Order> get_all_orders(){
-//        return  all_orders;
-//    }
+
 
 
     void update(Integer id){  //check if this works
