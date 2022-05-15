@@ -15,6 +15,7 @@ class Order {
         state="Preparing";
         isOnline=mode;
         isDelivered=false;
+        total = 0;
     }
     public String getState(){
         return state;
@@ -22,16 +23,18 @@ class Order {
 
 
     public void next_state(){
-        if(isOnline==Boolean.TRUE){
+        if(Boolean.compare(isOnline,true)==0){
             if(state.equals("Preparing")){
                 state="On Route";
             }
             else{
                 state="Delivered";
+                isDelivered = true;
             }
         }
         else{
             state="Delivered";
+            isDelivered = true;
         }
     }
 

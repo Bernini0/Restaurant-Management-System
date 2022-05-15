@@ -26,11 +26,19 @@ public class Order_collection {
 
 
     void update(Integer id){  //check if this works
+//        System.out.println(id+" ");
         Order to_be_updated=pending_orders.get(id);
-        to_be_updated.next_state();
-        if(to_be_updated.getIsDelivered()==Boolean.TRUE){
-            pending_orders.remove(id);
-            pending_count--;
+        System.out.println("total order sum " + to_be_updated.total);
+        if(to_be_updated==null){
+            System.out.println("does not work");
+        }
+        else {
+            System.out.println("works");
+            to_be_updated.next_state();
+            if (to_be_updated.getIsDelivered() == Boolean.TRUE) {
+                pending_orders.remove(id);
+                pending_count--;
+            }
         }
     }
 }

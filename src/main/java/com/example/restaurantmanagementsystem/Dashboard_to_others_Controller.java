@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Map;
 
+import static com.example.restaurantmanagementsystem.HelloApplication.l;
+
 
 //import static com.example.restaurantmanagementsystem.Order_collection.all_orders;
 
@@ -45,19 +47,19 @@ public class Dashboard_to_others_Controller {
     }
     public void calculate_sales_and_orders_insight(){
         setting(today_sale,today_order_count,on_the_way,total_sale_online,total_cost_online,total_sale_onsite,total_cost_onsite,net_loss_onsite,net_profit_onsite,net_profit_online,net_loss_online,online_order_count,onsite_order_count,onsite_delivered_order_count,online_delivared_order_count);
-        Order_collection oc = new Order_collection();
-        for (Integer i = 0; i < 4; i++){
-            Order x = new Order(false);
-            x.id = i;
-            x.total = 100;
-            x.order_summary.put("Vat",100);
-            x.order_summary.put("Fist",100);
-            oc.add_order(x);
-//            all_orders.put(x.id,x);
-        }
-//        System.out.println(all_orders.get(0).total);
-        for (Map.Entry<Integer,Order> entry:oc.all_orders.entrySet()){
-            Order now_processing = oc.all_orders.get(entry.getKey());
+//        Order_collection oc = new Order_collection();
+//        for (Integer i = 0; i < 4; i++){
+//            Order x = new Order(false);
+//            x.id = i;
+//            x.total = 100;
+//            x.order_summary.put("Vat",100);
+//            x.order_summary.put("Fist",100);
+//            oc.add_order(x);
+////            all_orders.put(x.id,x);
+//        }
+////        System.out.println(all_orders.get(0).total);
+        for (Map.Entry<Integer,Order> entry:l.man.all_order_collection.all_orders.entrySet()){
+            Order now_processing = l.man.all_order_collection.all_orders.get(entry.getKey());
             today_sale += now_processing.total;
             today_order_count++;
             System.out.println(now_processing.getIsOnline());

@@ -13,7 +13,9 @@ public class Manager {
     public Manager(){
         loyalty= new HashMap<String,Integer>();
         menu=new Menu();
-
+        menu.add_dish("Vat",100);
+        menu.add_dish("Fish",100);
+//        System.out.println(menu.get_price("Vat"));
         all_order_collection =new Order_collection();
         offline_order_collection =new Order_collection();
         online_order_collection =new Order_collection();
@@ -52,14 +54,19 @@ public class Manager {
 
     public void update_order(Integer id){
         all_order_collection.update(id);
+        System.out.println("all order collection updated");
         Order current_order=all_order_collection.all_orders.get(id);
-        if(Boolean.compare(current_order.getIsDelivered(),true)==0) all_sale_collection.update(id,current_order.total,true);
+        if(Boolean.compare(current_order.getIsDelivered(),true)==0) {
+            all_sale_collection.update(id,current_order.total,true);
+        }
         if(Boolean.compare(current_order.getIsOnline(),true)==0){
             online_order_collection.update(id);
             if(Boolean.compare(current_order.getIsDelivered(),true)==0) online_sale_collection.update(id,current_order.total,true);
         }
         else{
+
             offline_order_collection.update(id);
+            System.out.println("offline order collection updated");
             if(Boolean.compare(current_order.getIsDelivered(),true)==0) offline_sale_collection.update(id,current_order.total,true);
         }
     }
