@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Dashboard_to_others_Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Dashboard_to_others_Controller">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1310.0">
          <left>
@@ -79,14 +72,14 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="30.0" layoutY="458.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="primary-bg2" stylesheets="@style.css">
+                  <HBox alignment="CENTER" layoutX="30.0" layoutY="524.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="primary-bg2" stylesheets="@style.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/sales.png" />
+                              <Image url="@images/account.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="sales" mnemonicParsing="false" onMouseClicked="#go_to_sales_insight" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Sales Insight">
+                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_account_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -113,33 +106,16 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="30.0" layoutY="524.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="primary-bg2" stylesheets="@style.css">
+                  <HBox alignment="CENTER" layoutX="30.0" layoutY="458.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="primary-bg2" stylesheets="@style.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/account.png" />
+                              <Image url="@images/sales.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_account_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Account">
+                        <Button fx:id="sales" mnemonicParsing="false" onMouseClicked="#go_to_sales_insight" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Sales Insight">
                            <font>
                               <Font size="14.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" layoutX="30.0" layoutY="538.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="primary-bg2" stylesheets="@style.css">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@images/logout.png" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="logout" mnemonicParsing="false" onMouseClicked="#go_to_logout" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Log Out">
-                           <font>
-                              <Font name="Segoe UI" size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -360,7 +336,7 @@
                                  <children>
                                     <HBox alignment="CENTER" prefHeight="53.0" prefWidth="200.0">
                                        <children>
-                                          <Label prefHeight="22.0" prefWidth="182.0" text="HOT CHOCOLATE">
+                                          <Label prefHeight="22.0" prefWidth="182.0" text="MACAROONS">
                                              <font>
                                                 <Font name="Segoe UI" size="14.0" />
                                              </font>
@@ -369,7 +345,7 @@
                                     </HBox>
                                     <ImageView fitHeight="192.0" fitWidth="240.0" pickOnBounds="true" smooth="false">
                                        <image>
-                                          <Image url="@images/hotchoc.jpg" />
+                                          <Image url="@images/macaroon.jpg" />
                                        </image>
                                     </ImageView>
                                  </children>
@@ -378,7 +354,7 @@
                                  <children>
                                     <HBox alignment="CENTER" prefHeight="53.0" prefWidth="200.0">
                                        <children>
-                                          <Label prefHeight="22.0" prefWidth="182.0" text="BENTO BOX">
+                                          <Label prefHeight="22.0" prefWidth="182.0" text="BIBIMBAP">
                                              <font>
                                                 <Font name="Segoe UI" size="14.0" />
                                              </font>
@@ -387,7 +363,7 @@
                                     </HBox>
                                     <ImageView fitHeight="192.0" fitWidth="240.0" pickOnBounds="true" smooth="false">
                                        <image>
-                                          <Image url="@images/bento.jpg" />
+                                          <Image url="@images/bibimbap.jpg" />
                                        </image>
                                     </ImageView>
                                  </children>
