@@ -37,7 +37,7 @@
                               <Image url="@images/app.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="dashboard" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
+                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#go_back_to_dashboard" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -71,7 +71,7 @@
                               <Image url="@images/online_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="online_orders" mnemonicParsing="false" onMouseClicked="#go_to_Orders_Overview" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
+                        <Button fx:id="online_orders" mnemonicParsing="false" onAction="#go_to_Orders_Overview" onMouseClicked="#go_to_Orders_Overview" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -88,7 +88,7 @@
                               <Image url="@images/account.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_account_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
+                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onAction="#go_to_account_page" onMouseClicked="#go_to_account_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -105,7 +105,7 @@
                               <Image url="@images/menu.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="menu1" layoutX="51.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_menu_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Menu">
+                        <Button fx:id="menu1" layoutX="51.0" layoutY="18.0" mnemonicParsing="false" onAction="#go_to_menu_page" onMouseClicked="#go_to_menu_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Menu">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -122,7 +122,7 @@
                               <Image url="@images/sales.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="sales" mnemonicParsing="false" onMouseClicked="#go_to_sales_insight" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Sales Insight">
+                        <Button fx:id="sales" mnemonicParsing="false" onAction="#go_to_sales_insight" onMouseClicked="#go_to_sales_insight" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Sales Insight">
                            <font>
                               <Font size="14.0" />
                            </font>
