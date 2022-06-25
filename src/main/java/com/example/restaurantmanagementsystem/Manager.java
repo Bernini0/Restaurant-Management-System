@@ -43,9 +43,9 @@ public class Manager {
 
 
     }
-    public void take_offline_order(Integer id, Integer discount, Map<Dish,Integer> dish_count){
+    public void take_offline_order(Integer id, Integer discount, String name, Map<Dish,Integer> dish_count){
         Offline_Customer customer=new Offline_Customer(id,discount);
-        Order current_order=customer.order(dish_count,menu);
+        Order current_order=customer.order(dish_count,menu, name);
         all_order_collection.add_order(current_order);
         offline_order_collection.add_order(current_order);
 
@@ -54,9 +54,9 @@ public class Manager {
 
     }
 
-    public void take_online_order(Integer id, Integer discount, String adress, Map<Dish,Integer> dish_count){
+    public void take_online_order(Integer id, Integer discount, String name, String adress, Map<Dish,Integer> dish_count){
         Online_Customer customer=new Online_Customer(id,discount,adress);
-        Order current_order=customer.order(dish_count,menu);
+        Order current_order=customer.order(dish_count,menu, name);
         all_order_collection.add_order(current_order);
         online_order_collection.add_order(current_order);
         all_sale_collection.update(current_order.id,current_order.total,Boolean.FALSE);
@@ -68,19 +68,19 @@ public class Manager {
         all_order_collection.update(id);
         System.out.println("all order collection updated");
         Order current_order=all_order_collection.all_orders.get(id);
-        if(Boolean.compare(current_order.getIsDelivered(),true)==0) {
-            all_sale_collection.update(id,current_order.total,true);
-        }
-        if(Boolean.compare(current_order.getIsOnline(),true)==0){
-            online_order_collection.update(id);
-            if(Boolean.compare(current_order.getIsDelivered(),true)==0) online_sale_collection.update(id,current_order.total,true);
-        }
-        else{
-
-            offline_order_collection.update(id);
-            System.out.println("offline order collection updated");
-            if(Boolean.compare(current_order.getIsDelivered(),true)==0) offline_sale_collection.update(id,current_order.total,true);
-        }
+//        if(current_order.getIsDelivered()==true) {
+//            all_sale_collection.update(id,current_order.total,true);
+//        }
+//        if(current_order.getIsOnline()==true){
+//            online_order_collection.update(id);
+//            if(current_order.getIsDelivered()==true) online_sale_collection.update(id,current_order.total,true);
+//        }
+//        else{
+//
+//            offline_order_collection.update(id);
+//            System.out.println("offline order collection updated");
+//            if(current_order.getIsDelivered()==true) offline_sale_collection.update(id,current_order.total,true);
+//        }
     }
 
     private void setting(Integer a, Integer b, Integer c, Integer d, Integer e, Integer g, Integer f, Integer h, Integer i, Integer j, Integer k,Integer l, Integer m, Integer n, Integer o){

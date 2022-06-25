@@ -5,6 +5,8 @@ import java.util.Map;
 
 class Order {
     public Integer id;
+
+    public String customer_name;
     public Integer total;
     private Boolean isOnline;
     private Boolean isDelivered;
@@ -23,8 +25,9 @@ class Order {
 
 
     public void next_state(){
-        if(Boolean.compare(isOnline,true)==0){
+        if(isOnline==true){
             if(state.equals("Preparing")){
+                System.out.println("Paisi");
                 state="On Route";
             }
             else{
@@ -45,5 +48,10 @@ class Order {
         return isOnline;
     }
     public void changeIsOnline() { isOnline=!isOnline; }
+    public void setCustomer_name(String s){
+        customer_name = s;
+    }
+
+    public String getCustomer_name(){return customer_name;}
 
 }

@@ -13,8 +13,9 @@ public class Offline_Customer implements Order_Food{
     }
 
 
-    public Order order(Map<Dish, Integer> order_sum, Menu menu) {
+    public Order order(Map<Dish, Integer> order_sum, Menu menu, String name) {
         Order new_order = new Order(false);
+        new_order.setCustomer_name(name);
         new_order.id=this.id;
         Integer curr,disc;
         for(Map.Entry<Dish,Integer> entry:order_sum.entrySet()){

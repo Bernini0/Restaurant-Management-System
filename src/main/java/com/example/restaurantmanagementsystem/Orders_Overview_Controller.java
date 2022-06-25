@@ -91,40 +91,20 @@ public class Orders_Overview_Controller {
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         Show s = new Show();
         s.display(stage,"dashboard.fxml");
-//        Show.dis_play(root,e);
-//        Show s = new Show();
-//        s.dis_play(root,e);
     }
     public void go_to_take_orders(MouseEvent e) throws IOException{
-//        Dashboard_to_others_Controller dtoc = new Dashboard_to_others_Controller();
         dtoc.go_to_take_orders(e);
     }
     public void go_to_sales_insight(MouseEvent e) throws IOException{
-//        Dashboard_to_others_Controller dtoc = new Dashboard_to_others_Controller();
         dtoc.go_to_sales_insight(e);
     }
     public void go_to_menu_page(MouseEvent e) throws IOException{
-//        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-////        root =  FXMLLoader.load(getClass().getResource("Menu_Page.fxml"));
-////        Show.dis_play(root,e);
-//        Show s = new Show();
-//        s.display(stage,"Menu_Page.fxml");
         dtoc.go_to_menu_page(e);
     }
-    public void go_to_account_page(MouseEvent e) throws IOException{
-//        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-////        root =  FXMLLoader.load(getClass().getResource("Account_Page.fxml"));
-////        Show.dis_play(root,e);
-//        Show s = new Show();
-//        s.display(stage,"Account_Page.fxml");
-        dtoc.go_to_account_page(e);
+    public void go_to_order_status(MouseEvent e) throws IOException{
+        dtoc.go_to_order_status(e);
     }
     public void go_to_logout(MouseEvent e) throws IOException{
-//        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-////        root =  FXMLLoader.load(getClass().getResource("Login_Page.fxml"));
-////        Show.dis_play(root,e);
-//        Show s = new Show();
-//        s.display(stage,"Login_Page.fxml");
         dtoc.go_to_logout(e);
     }
     public void setter(String m, String n, String o, String p, String q, String r, String s, String t, String u, String v,String w){

@@ -92,7 +92,7 @@ public class Menu_Controller {
         dtoc.go_to_sales_insight(e);
     }
     public void go_to_account_page(MouseEvent e) throws IOException{
-        dtoc.go_to_account_page(e);
+        dtoc.go_to_order_status(e);
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         dtoc.go_to_logout(e);
@@ -130,9 +130,9 @@ public class Menu_Controller {
             }catch (IllegalArgumentException x){
                 System.out.println("haha");
             }
-            v.setPrefSize(120,70);
-            v.setMaxSize(120,700);
-            v.setMinSize(120,10);
+//            v.setPrefSize(120,70);
+//            v.setMaxSize(120,700);
+//            v.setMinSize(120,10);
             v.setAlignment(Pos.TOP_LEFT);
             sl.setAlignment(Pos.CENTER);
             food.setAlignment(Pos.CENTER);

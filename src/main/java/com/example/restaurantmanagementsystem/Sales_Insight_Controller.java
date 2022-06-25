@@ -96,8 +96,8 @@ public class Sales_Insight_Controller {
     public void go_to_menu_page(MouseEvent e) throws IOException{
         dtoc.go_to_menu_page(e);
     }
-    public void go_to_account_page(MouseEvent e) throws IOException{
-        dtoc.go_to_account_page(e);
+    public void go_to_order_status(MouseEvent e) throws IOException{
+        dtoc.go_to_order_status(e);
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         dtoc.go_to_logout(e);

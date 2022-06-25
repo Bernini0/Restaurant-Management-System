@@ -64,10 +64,13 @@ public class Dashboard_to_others_Controller {
         m_c.set_scrollpane();
         Show.dis_play(root, e);
     }
-    public void go_to_account_page(MouseEvent e) throws IOException{
+    public void go_to_order_status(MouseEvent e) throws IOException{
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Show s = new Show();
-        s.display(stage,"Account_Page.fxml");
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("Order_Status.fxml"));
+        root = loader.load();
+        Order_Status_Controller o_s_c = loader.getController();
+        o_s_c.set_scrollpane(1);
+        Show.dis_play(root, e);
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();

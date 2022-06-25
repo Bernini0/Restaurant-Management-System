@@ -35,7 +35,7 @@
                               <Image url="@images/app.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#go_back_to_dashboard" onMouseClicked="#go_back_to_dashboard" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
+                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#go_back_to_dashboard" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -86,7 +86,7 @@
                               <Image url="@images/account.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_account_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
+                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_order_status" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
                            <font>
                               <Font size="14.0" />
                            </font>

@@ -67,6 +67,7 @@ public class Take_Orders_Controller {
         scrollpane.setContent(v);
     }
     public void taking_orders(){
+        String customer_name = name.getText();
         Map<Dish,Integer> dish_count = new HashMap<Dish,Integer>();
         offline.setIndeterminate(false);
         online.setIndeterminate(false);
@@ -88,7 +89,7 @@ public class Take_Orders_Controller {
         }
         if(offline.isSelected()==true){
             Integer discount = 0;
-            man.take_offline_order(man.index,discount,dish_count);
+            man.take_offline_order(man.index,discount,customer_name,dish_count);
             man.index++;
             offline.fire();
 //            man.calculate_sales_and_orders_insight();
@@ -96,7 +97,7 @@ public class Take_Orders_Controller {
         else if(online.isSelected()==true){
             Integer discount = 0;
             String address = address_or_table_num.getText();
-            man.take_online_order(man.index, discount, address,dish_count);
+            man.take_online_order(man.index, discount, customer_name, address,dish_count);
             man.index++;
 //            man.calculate_sales_and_orders_insight();
         }
@@ -127,8 +128,8 @@ public class Take_Orders_Controller {
     public void go_to_menu_page(MouseEvent e) throws IOException{
         dtoc.go_to_menu_page(e);
     }
-    public void go_to_account_page(MouseEvent e) throws IOException{
-        dtoc.go_to_account_page(e);
+    public void go_to_order_status(MouseEvent e) throws IOException{
+        dtoc.go_to_order_status(e);
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         dtoc.go_to_logout(e);
