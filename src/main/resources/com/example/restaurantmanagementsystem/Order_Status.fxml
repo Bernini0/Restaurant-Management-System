@@ -208,11 +208,11 @@
                                  <content>
                                     <VBox fx:id="vbox" prefHeight="573.0" prefWidth="540.0">
                                        <children>
-                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="246.0" spacing="20.0">
                                              <children>
                                                 <Label alignment="CENTER" prefHeight="52.0" prefWidth="94.0" style="-fx-font-weight: bold;" text="Order No." />
-                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="208.0" style="-fx-font-weight: bold;" text="Customer Name" />
-                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="174.0" style="-fx-font-weight: bold;" text="Order Status" />
+                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="247.0" style="-fx-font-weight: bold;" text="Customer Name" />
+                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Order Status" />
                                              </children>
                                           </HBox>
                                        </children></VBox>
