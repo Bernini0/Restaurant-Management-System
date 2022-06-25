@@ -4,8 +4,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Dashboard_to_others_Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Menu_Controller">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1310.0">
          <left>
@@ -37,7 +37,7 @@
                               <Image url="@images/app.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="dashboard" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
+                        <Button fx:id="dashboard" mnemonicParsing="false" onMouseClicked="#go_back_to_dashboard" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -105,7 +105,7 @@
                               <Image url="@images/menu.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="menu1" layoutX="51.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_menu_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Menu">
+                        <Button fx:id="menu1" layoutX="51.0" layoutY="18.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Menu">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -186,7 +186,7 @@
                         </HBox>
                      </children>
                   </HBox>
-                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                  <VBox prefHeight="200.0" prefWidth="1037.0" spacing="20.0" VBox.vgrow="ALWAYS">
                      <children>
                         <Label alignment="CENTER" prefHeight="28.0" prefWidth="54.0" text="Menu" textFill="WHITE">
                            <font>
@@ -196,16 +196,131 @@
                               <Insets bottom="5.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <TableView prefHeight="495.0" prefWidth="1020.0">
-                          <columns>
-                            <TableColumn prefWidth="56.00005912780762" text="Serial" />
-                            <TableColumn prefWidth="113.59998321533203" text="Food" />
-                              <TableColumn prefWidth="285.6000671386719" text="Description" />
-                              <TableColumn minWidth="8.79998779296875" prefWidth="157.59994506835938" text="Image" />
-                              <TableColumn prefWidth="118.4000244140625" text="Price" />
-                              <TableColumn prefWidth="289.5999755859375" text="Update Options" />
-                          </columns>
-                        </TableView>
+                        <VBox prefHeight="610.0" prefWidth="1020.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="602.0" prefWidth="1020.0">
+                                 <children>
+                                    <VBox prefHeight="602.0" prefWidth="677.0">
+                                       <children>
+                                          <ScrollPane fx:id="scrollpane" opacity="0.64" prefHeight="616.0" prefWidth="676.0">
+                                             <content>
+                                                <VBox fx:id="vbox" prefHeight="597.0" prefWidth="668.0">
+                                                   <children>
+                                                      <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="675.0">
+                                                         <children>
+                                                            <Label alignment="CENTER" prefHeight="43.0" prefWidth="50.0" style="-fx-font-weight: bold;" text="Serial" />
+                                                            <Label alignment="CENTER" prefHeight="43.0" prefWidth="128.0" style="-fx-font-weight: bold;" text="Food" />
+                                                            <Label alignment="CENTER" prefHeight="43.0" prefWidth="225.0" style="-fx-font-weight: bold;" text="Description" textAlignment="CENTER" />
+                                                            <Label alignment="CENTER" prefHeight="43.0" prefWidth="120.0" style="-fx-font-weight: bold;" text="Image" />
+                                                            <Label alignment="CENTER" prefHeight="43.0" prefWidth="90.0" style="-fx-font-weight: bold;" text="Price" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" prefHeight="602.0" prefWidth="346.0">
+                                       <children>
+                                          <VBox alignment="CENTER" prefHeight="398.0" prefWidth="345.0">
+                                             <children>
+                                                <HBox prefHeight="273.0" prefWidth="345.0" spacing="20.0">
+                                                   <children>
+                                                      <VBox prefHeight="233.0" prefWidth="109.0" spacing="20.0">
+                                                         <children>
+                                                            <Label prefHeight="24.0" prefWidth="104.0" style="-fx-font-weight: bold;" text="Name of Dish" textFill="#f8f1f1" wrapText="true" />
+                                                            <Label prefHeight="24.0" prefWidth="99.0" style="-fx-font-weight: bold;" text="Price" textFill="#f8f5f5" wrapText="true" />
+                                                            <Label style="-fx-font-weight: bold;" text="Description" textFill="#fcf2f2" />
+                                                            <Label alignment="BOTTOM_LEFT" prefHeight="64.0" prefWidth="101.0" style="-fx-font-weight: bold;" text="Image Source" textFill="#f5f3f3" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox prefHeight="110.0" prefWidth="185.0" spacing="20.0">
+                                                         <children>
+                                                            <TextField fx:id="new_dish_name" prefHeight="24.0" prefWidth="99.0" />
+                                                            <TextField fx:id="new_dish_price" prefHeight="24.0" prefWidth="108.0" />
+                                                            <TextArea fx:id="new_dish_description" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+                                                            <TextField fx:id="new_dish_image_src" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <Button mnemonicParsing="false" onMouseClicked="#add_dish" text="Add Dish" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox prefHeight="95.0" prefWidth="345.0" spacing="20.0">
+                                                   <children>
+                                                      <VBox prefHeight="110.0" prefWidth="106.0" spacing="20.0">
+                                                         <children>
+                                                            <Label prefHeight="24.0" prefWidth="107.0" style="-fx-font-weight: bold;" text="Name of Dish" textFill="#fffefe" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox prefHeight="110.0" prefWidth="189.0" spacing="20.0">
+                                                         <children>
+                                                            <TextField fx:id="dish_to_be_removed" prefHeight="24.0" prefWidth="99.0" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <Button mnemonicParsing="false" onMouseClicked="#remove_dish" text="Remove Dish" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="627.0">
+                                             <children>
+                                                <HBox prefHeight="150.0" prefWidth="309.0" spacing="20.0">
+                                                   <children>
+                                                      <VBox prefHeight="110.0" prefWidth="105.0" spacing="20.0">
+                                                         <children>
+                                                            <Label prefHeight="24.0" prefWidth="141.0" style="-fx-font-weight: bold;" text="Name of Dish" textFill="#f5f2f2" />
+                                                            <Label prefHeight="24.0" prefWidth="99.0" style="-fx-font-weight: bold;" text="Price" textFill="#fcfafa" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                      <VBox prefHeight="110.0" prefWidth="190.0" spacing="20.0">
+                                                         <children>
+                                                            <TextField fx:id="to_be_updated_name" prefHeight="24.0" prefWidth="99.0" />
+                                                            <TextField fx:id="to_be_updated_price" prefHeight="24.0" prefWidth="108.0" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <Button mnemonicParsing="false" onMouseClicked="#update_dish" text="Update Dish" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" />

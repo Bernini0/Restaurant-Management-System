@@ -81,62 +81,30 @@ public class Orders_Overview_Controller {
     private Parent root;
     private Scene scene;
     private Stage stage;
+
+    private Dashboard_to_others_Controller dtoc = new Dashboard_to_others_Controller();
     public void x(){
 
     }
     public void go_back_to_dashboard(ActionEvent e) throws IOException {
-//        root =  FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         Show s = new Show();
         s.display(stage,"dashboard.fxml");
-//        Show.dis_play(root,e);
-//        Show s = new Show();
-//        s.dis_play(root,e);
     }
     public void go_to_take_orders(MouseEvent e) throws IOException{
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//        root =  FXMLLoader.load(getClass().getResource("Take_Order_Page.fxml"));
-//        Show.dis_play(root,e);
-        Show s = new Show();
-        s.display(stage,"Take_Order_Page.fxml");
+        dtoc.go_to_take_orders(e);
     }
     public void go_to_sales_insight(MouseEvent e) throws IOException{
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("Sales_Insight_Page.fxml"));
-        root = loader.load();
-        Sales_Insight_Controller sc4 = loader.getController();
-        Dashboard_to_others_Controller dtoc = new Dashboard_to_others_Controller();
-        dtoc.calculate_sales_and_orders_insight();
-        System.out.println(dtoc.total_sale_onsite);
-        sc4.setter(Integer.toString(dtoc.today_sale),Integer.toString(dtoc.today_order_count),Integer.toString(dtoc.on_the_way),Integer.toString(dtoc.total_sale_onsite),Integer.toString(dtoc.net_profit_onsite),Integer.toString(dtoc.total_sale_online),Integer.toString(dtoc.net_profit_online),Integer.toString(dtoc.total_cost_onsite),Integer.toString(dtoc.net_loss_onsite),Integer.toString(dtoc.total_cost_online),Integer.toString(dtoc.net_loss_online));
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-//        root =  FXMLLoader.load(getClass().getResource("Sales_Insight_Page.fxml"));
-//        Show.dis_play(root,e);
-//        Show s = new Show();
-//        s.display(stage,"Sales_Insight_Page.fxml");
+        dtoc.go_to_sales_insight(e);
     }
     public void go_to_menu_page(MouseEvent e) throws IOException{
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//        root =  FXMLLoader.load(getClass().getResource("Menu_Page.fxml"));
-//        Show.dis_play(root,e);
-        Show s = new Show();
-        s.display(stage,"Menu_Page.fxml");
+        dtoc.go_to_menu_page(e);
     }
     public void go_to_account_page(MouseEvent e) throws IOException{
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//        root =  FXMLLoader.load(getClass().getResource("Account_Page.fxml"));
-//        Show.dis_play(root,e);
-        Show s = new Show();
-        s.display(stage,"Account_Page.fxml");
+        dtoc.go_to_account_page(e);
     }
     public void go_to_logout(MouseEvent e) throws IOException{
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//        root =  FXMLLoader.load(getClass().getResource("Login_Page.fxml"));
-//        Show.dis_play(root,e);
-        Show s = new Show();
-        s.display(stage,"Login_Page.fxml");
+        dtoc.go_to_logout(e);
     }
     public void setter(String m, String n, String o, String p, String q, String r, String s, String t, String u, String v,String w){
         sales1.setText(m);

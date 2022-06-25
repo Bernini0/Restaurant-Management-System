@@ -82,11 +82,12 @@ public class Dashboard_to_others_Controller {
         net_loss_onsite = net_loss_online = 0;
     }
     public void go_to_take_orders(MouseEvent e) throws IOException{
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//        root =  FXMLLoader.load(getClass().getResource("Take_Order_Page.fxml"));
-//        Show.dis_play(root,e);
-        Show s = new Show();
-        s.display(stage,"Take_Order_Page.fxml");
+//        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Take_Order_Page.fxml"));
+        root = loader.load();
+        Take_Orders_Controller t_o_c = loader.getController();
+        t_o_c.set_scrollPane();
+        Show.dis_play(root,e);
     }
     public void go_to_Orders_Overview(MouseEvent e) throws IOException{
         FXMLLoader loader= new FXMLLoader(getClass().getResource("Orders_Overview_Page.fxml"));
@@ -99,10 +100,6 @@ public class Dashboard_to_others_Controller {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-//        root =  FXMLLoader.load(getClass().getResource("Sales_Insight_Page.fxml"));
-//        Show.dis_play(root,e);
-//        Show s = new Show();
-//        s.display(stage,"Sales_Insight_Page.fxml");
     }
     public void go_to_sales_insight(MouseEvent e) throws IOException{
         FXMLLoader loader= new FXMLLoader(getClass().getResource("Sales_Insight_Page.fxml"));
@@ -115,29 +112,21 @@ public class Dashboard_to_others_Controller {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-//        root =  FXMLLoader.load(getClass().getResource("Sales_Insight_Page.fxml"));
-//        Show.dis_play(root,e);
-//        Show s = new Show();
-//        s.display(stage,"Sales_Insight_Page.fxml");
     }
     public void go_to_menu_page(MouseEvent e) throws IOException{
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//        root =  FXMLLoader.load(getClass().getResource("Menu_Page.fxml"));
-//        Show.dis_play(root,e);
-        Show s = new Show();
-        s.display(stage,"Menu_Page.fxml");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu_Page.fxml"));
+        root = loader.load();
+        Menu_Controller m_c = loader.getController();
+        m_c.set_scrollpane();
+        Show.dis_play(root,e);
     }
     public void go_to_account_page(MouseEvent e) throws IOException{
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//        root =  FXMLLoader.load(getClass().getResource("Account_Page.fxml"));
-//        Show.dis_play(root,e);
         Show s = new Show();
         s.display(stage,"Account_Page.fxml");
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-//        root =  FXMLLoader.load(getClass().getResource("Login_Page.fxml"));
-//        Show.dis_play(root,e);
         Show s = new Show();
         s.display(stage,"Login_Page.fxml");
     }
