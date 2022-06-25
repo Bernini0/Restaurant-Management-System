@@ -1,156 +1,210 @@
 package com.example.restaurantmanagementsystem;
 
-import javafx.fxml.Initializable;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Region;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 
-public class Menu_Controller implements Initializable {
-    @FXML
-    private VBox chosenDishCard;
+import static com.example.restaurantmanagementsystem.Loader.man;
 
-    @FXML
-    private Label dishNameLable;
+public class Menu_Controller {
 
-    @FXML
-    private Label dishPriceLabel;
+
+    private Parent root;
+    private Scene scene;
+    private Stage stage;
+    private Dashboard_to_others_Controller dtoc = new Dashboard_to_others_Controller();
 
     @FXML
-    private ImageView dishImg;
+    private Button account;
 
     @FXML
-    private ScrollPane scroll;
+    private Button dashboard;
 
     @FXML
-    private GridPane grid;
+    private Button menu1;
 
-    private List<Dish> dishes = new ArrayList<>();
-    private Image image;
-    private click_control control;
+    @FXML
+    private TextField dish_to_be_removed;
+    @FXML
+    private TextField new_dish_image_src;
 
-    private List<Dish> getData() {
-        List<Dish> dishes = new ArrayList<>();
-        Dish dish;
+    @FXML
+    private TextField new_dish_name;
 
-        dish = new Dish("Bibimbap", 10);
-        dish.setImgSrc("/images/bibimbap.jpg");
-        dish.setColor("6A7324");
-        dishes.add(dish);
+    @FXML
+    private TextField new_dish_price;
 
-        dish = new Dish("Hot Chocolate", 8);
-        dish.setImgSrc("/images/hotchoc.jpg");
-        dish.setColor("A7745B");
-        dishes.add(dish);
+    @FXML
+    private TextArea new_dish_description;
 
-        dish = new Dish("Harissa Pasta", 15);
-        dish.setImgSrc("/images/pasta.jpg");
-        dish.setColor("F16C31");
-        dishes.add(dish);
+    @FXML
+    private Button online_orders;
 
-        dish = new Dish("Macaroons", 12);
-        dish.setImgSrc("/images/macaroon.jpg");
-        dish.setColor("291D36");
-        dishes.add(dish);
+    @FXML
+    private Button onsite_orders;
 
-        dish = new Dish("Chicken Curry and Naan", 20);
-        dish.setImgSrc("/images/chicken_curry.jpg");
-        dish.setColor("22371D");
-        dishes.add(dish);
+    @FXML
+    private Button sales;
 
-        dish = new Dish("Bento", 10);
-        dish.setImgSrc("/images/bento.jpg");
-        dish.setColor("FB5D03");
-        dishes.add(dish);
+    @FXML
+    private TextField to_be_updated_name;
 
-        dish = new Dish("Raspberry Trifle", 15);
-        dish.setImgSrc("/images/raspberry.jpg");
-        dish.setColor("80080C");
-        dishes.add(dish);
+    @FXML
+    private TextField to_be_updated_price;
 
-        dish = new Dish("English Breakfast", 20);
-        dish.setImgSrc("/images/engbf.jpg");
-        dish.setColor("FFB605");
-        dishes.add(dish);
+    @FXML
+    private ScrollPane scrollpane;
 
-        dish = new Dish("Berry Waffle", 12);
-        dish.setImgSrc("/images/waffle.jpg");
-        dish.setColor("5F060E");
-        dishes.add(dish);
+    @FXML
+    private HBox search;
 
-        dish = new Dish("Twin Rollcakes", 15);
-        dish.setImgSrc("/images/rollcake");
-        dish.setColor("E7C00F");
-        dishes.add(dish);
+    @FXML
+    private HBox toppane;
 
-        return dishes;
+    @FXML
+    private VBox vbox;
+
+    public void go_back_to_dashboard(ActionEvent e) throws IOException {
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        Show s = new Show();
+        s.display(stage,"dashboard.fxml");
+    }
+    public void go_to_take_orders(MouseEvent e) throws IOException {
+        dtoc.go_to_take_orders(e);
+    }
+    public void go_to_Orders_Overview(MouseEvent e) throws IOException{
+        dtoc.go_to_Orders_Overview(e);
+    }
+    public void go_to_sales_insight(MouseEvent e) throws IOException{
+        dtoc.go_to_sales_insight(e);
+    }
+    public void go_to_account_page(MouseEvent e) throws IOException{
+        dtoc.go_to_account_page(e);
+    }
+    public void go_to_logout(MouseEvent e) throws IOException{
+        dtoc.go_to_logout(e);
     }
 
-    private void setChosenDish(Dish dish) {
-        dishNameLable.setText(dish.getName());
-        dishPriceLabel.setText(Menu.CURRENCY + dish.getPrice());
-        image = new Image(getClass().getResourceAsStream(dish.getImgSrc()));
-        dishImg.setImage(image);
-        chosenDishCard.setStyle("-fx-background-color: #" + dish.getColor() + ";\n" +
-                "    -fx-background-radius: 30;");
-    }
-
-
-    public void initialize(URL location, ResourceBundle resources) {
-        dishes.addAll(getData());
-        if (dishes.size() > 0) {
-            setChosenDish(dishes.get(0));
-            control = new click_control() {
-                @Override
-                public void on_click(Dish dish) {
-                    setChosenDish(dish);
-                }
-            };
-        }
-        int column = 0;
-        int row = 1;
-        try {
-            for (int i = 0; i < dishes.size(); i++) {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("resources/com/example/restaurantmanagementsystem/Dish.fxml"));
-                AnchorPane anchorPane = fxmlLoader.load();
-
-                Dish_Controller dishController = fxmlLoader.getController();
-                dishController.setData(dishes.get(i),control);
-
-                if (column == 3) {
-                    column = 0;
-                    row++;
-                }
-
-                grid.add(anchorPane, column++, row); //(child,column,row)
-                //set grid width
-                grid.setMinWidth(Region.USE_COMPUTED_SIZE);
-                grid.setPrefWidth(Region.USE_COMPUTED_SIZE);
-                grid.setMaxWidth(Region.USE_PREF_SIZE);
-
-                //set grid height
-                grid.setMinHeight(Region.USE_COMPUTED_SIZE);
-                grid.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                grid.setMaxHeight(Region.USE_PREF_SIZE);
-
-                GridPane.setMargin(anchorPane, new Insets(10));
+    public void set_scrollpane(){
+//        vbox.setPadding(new Insets(20,20,20,20));
+        vbox.setSpacing(20.0);
+        for(int i = 0; i < man.menu.all_dishes.size(); i++){
+            Label sl = new Label();
+            sl.setText(String.valueOf(i));
+            sl.setPrefSize(50,-1);
+            sl.setMaxSize(50,-1);
+            sl.setMinSize(50,-1);
+            Dish d = man.menu.all_dishes.get(i);
+            Label food = new Label(d.getName());
+            food.setPrefSize(128,-1);
+            food.setMaxSize(128,-1);
+            food.setMinSize(128,-1);
+            Label description = new Label(d.getDescription());
+            description.setPrefSize(225,-1);
+            description.setMaxSize(225,-1);
+            description.setMinSize(225,-1);
+            VBox v = new VBox();
+            try {
+//                System.out.println(d.getImgSrc());
+                var img2 = new Image(getClass().getResource(d.getImgSrc()).toString(),120.0,70,false,false);
+//                System.out.println(description.getHeight());
+                ImageView im = new ImageView(img2);
+                v.setAlignment(Pos.TOP_LEFT);
+//                im.setFitHeight(description.getHeight());
+//                im.setFitWidth(140);
+//                im.
+                v.getChildren().add(im);
+            }catch (IllegalArgumentException x){
+                System.out.println("haha");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            v.setPrefSize(120,70);
+            v.setMaxSize(120,700);
+            v.setMinSize(120,10);
+            v.setAlignment(Pos.TOP_LEFT);
+            sl.setAlignment(Pos.CENTER);
+            food.setAlignment(Pos.CENTER);
+            description.setAlignment(Pos.CENTER);
+            Label price = new Label(String.valueOf(d.getPrice()));
+            price.setAlignment(Pos.CENTER);
+            price.setPrefSize(90,-1);
+            price.setMaxSize(90,-1);
+            price.setMinSize(90,-1);
+            HBox hb = new HBox(sl,food,description,v,price);
+            hb.setAlignment(Pos.CENTER_LEFT);
+            vbox.getChildren().add(hb);
         }
+        scrollpane.setContent(vbox);
     }
 
+    public void add_dish(MouseEvent e)throws IOException{
+        String name = new_dish_name.getText();
+        Integer price;
+        String description = new_dish_description.getText();
+        String img_src = new_dish_image_src.getText();
+//        System.out.println(check_image_source(img_src));
+        if(name!="" && check_image_source(img_src)==true) {
+            try {
+                price = Integer.valueOf(new_dish_price.getText());
+                man.menu.add_dish(name, price, description, img_src);
+                dtoc.go_to_menu_page(e);
+            }catch(NumberFormatException x) {
+                System.out.println("not number");
+                show_alert();
+            }
+        }
+        else{
+            show_alert();
+        }
+    }
+    public void remove_dish(MouseEvent e)throws IOException{
+        String s = dish_to_be_removed.getText();
+        man.menu.remove_dish(s);
+        dtoc.go_to_menu_page(e);
+    }
+    public void update_dish(MouseEvent e)throws IOException{
+        String s = to_be_updated_name.getText();
+        Integer price;
+        try{
+            price = Integer.valueOf(to_be_updated_price.getText());
+            man.menu.edit_price_of_dish(s,price);
+        }catch (NumberFormatException x){
+            show_alert();
+        }
+    }
+    public boolean check_image_source(String src){
+        try{
+            var img2 = new Image(getClass().getResource(src).toString());
+            return true;
+        }catch (Exception x) {
+            System.out.println("haha1");
+            return false;
+        }
+
+    }
+    public void show_alert(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);// line 1
+        alert.setTitle("Information Dialog Box");// line 2
+        alert.setHeaderText("Wrong Information");// line 3
+        alert.setContentText("Information that was provided is incorrect please check again");// line 4
+        alert.showAndWait();
+        new_dish_name.clear();
+        new_dish_price.clear();
+        new_dish_description.clear();
+        new_dish_image_src.clear();
+        to_be_updated_price.clear();
+        to_be_updated_name.clear();
+    }
 }

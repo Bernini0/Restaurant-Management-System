@@ -5,8 +5,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Dashboard_to_others_Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Take_Orders_Controller">
    <children>
       <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1310.0">
          <left>
@@ -37,7 +37,7 @@
                               <Image url="@images/app.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="dashboard" mnemonicParsing="false" onAction="#go_back_to_dashboard" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
+                        <Button mnemonicParsing="false" onAction="#go_back_to_dashboard" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Dashboard">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -54,7 +54,7 @@
                               <Image url="@images/onsite_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="onsite_orders" mnemonicParsing="false" onMouseClicked="#go_to_take_orders" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Take Orders">
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Take Orders">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -71,7 +71,7 @@
                               <Image url="@images/online_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="online_orders" mnemonicParsing="false" onAction="#go_to_Orders_Overview" onMouseClicked="#go_to_Orders_Overview" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
+                        <Button mnemonicParsing="false" onMouseClicked="#go_to_Orders_Overview" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -88,7 +88,7 @@
                               <Image url="@images/account.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onAction="#go_to_account_page" onMouseClicked="#go_to_account_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
+                        <Button layoutY="18.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -105,7 +105,7 @@
                               <Image url="@images/menu.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="menu1" layoutX="51.0" layoutY="18.0" mnemonicParsing="false" onAction="#go_to_menu_page" onMouseClicked="#go_to_menu_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Menu">
+                        <Button layoutX="51.0" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_menu_page" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Menu">
                            <font>
                               <Font name="Segoe UI" size="14.0" />
                            </font>
@@ -122,7 +122,7 @@
                               <Image url="@images/sales.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="sales" mnemonicParsing="false" onAction="#go_to_sales_insight" onMouseClicked="#go_to_sales_insight" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Sales Insight">
+                        <Button mnemonicParsing="false" onMouseClicked="#go_to_sales_insight" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Sales Insight">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -141,7 +141,7 @@
          <center>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="primary-bg1" stylesheets="@style.css" BorderPane.alignment="CENTER">
                <children>
-                  <HBox fx:id="toppane" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1065.0" spacing="20.0" styleClass="primary-bg2" stylesheets="@style.css">
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1065.0" spacing="20.0" styleClass="primary-bg2" stylesheets="@style.css">
                      <children>
                         <Pane prefHeight="74.0" prefWidth="768.0" HBox.hgrow="ALWAYS">
                            <children>
@@ -188,7 +188,7 @@
                   </HBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" VBox.vgrow="ALWAYS">
                      <children>
-                        <Label fx:id="onsite_orders" alignment="CENTER" prefHeight="28.0" prefWidth="102.0" text="Take Orders" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="28.0" prefWidth="102.0" text="Take Orders" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="16.0" />
                            </font>
@@ -208,7 +208,7 @@
                                     <Font name="Segoe UI Bold" size="14.0" />
                                  </font>
                               </CheckBox>
-                              <CheckBox layoutX="184.0" layoutY="10.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="145.0" text="Online" textFill="WHITE">
+                              <CheckBox fx:id="online" layoutX="184.0" layoutY="10.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="145.0" text="Online" textFill="WHITE">
                                  <font>
                                     <Font name="Segoe UI Bold" size="14.0" />
                                  </font>
@@ -222,7 +222,7 @@
                                     <Font name="Segoe UI Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField maxWidth="-Infinity" prefHeight="36.0" prefWidth="720.0" />
+                              <TextField fx:id="name" maxWidth="-Infinity" prefHeight="36.0" prefWidth="720.0" />
                            </children>
                         </VBox>
                         <VBox prefHeight="50.0" prefWidth="1020.0">
@@ -232,331 +232,15 @@
                                     <Font name="Segoe UI Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField maxWidth="-Infinity" prefHeight="36.0" prefWidth="720.0" />
+                              <TextField fx:id="address_or_table_num" maxWidth="-Infinity" prefHeight="36.0" prefWidth="720.0" />
                            </children>
                         </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
-                           <children>
-                              <HBox fx:id="heading" prefHeight="28.0" prefWidth="1020.0" spacing="100.0">
-                                 <children>
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="Select Item" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="114.0" text="Enter Quantity" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="98.0" layoutY="10.0" prefHeight="28.0" prefWidth="160.0" text="Price of a Single Unit" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="212.0" layoutY="10.0" prefHeight="28.0" prefWidth="82.0" text="Total Price" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="10.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <VBox.margin>
-                                    <Insets top="10.0" />
-                                 </VBox.margin>
-                                 <children>
-                                    <CheckBox fx:id="offline1" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Bento" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 10.00" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="48.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline11" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Bibimbap" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 8.50" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="76.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline111" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Chicken Curry" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 15.75" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="104.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline1111" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="English Breakfast" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 12.00" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="132.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline11111" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Harissa Pasta" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 16.00" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="160.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline111111" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Hot Chocolate" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 7.50" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="184.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline1111111" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Macaroon" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 3.00" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="216.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline11111111" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Raspberry Trifle" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 6.25" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="244.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline111111111" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Rollcakes" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 14.00" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox layoutX="10.0" layoutY="272.0" prefHeight="28.0" prefWidth="1020.0" spacing="50.0">
-                                 <children>
-                                    <CheckBox fx:id="offline1111111111" mnemonicParsing="false" prefHeight="28.0" prefWidth="144.0" text="Berry Waffle" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                    </CheckBox>
-                                    <TextField alignment="CENTER" prefHeight="26.0" prefWidth="84.0" />
-                                    <Label prefHeight="28.0" prefWidth="88.0" text="\$ 7.50" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="75.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Label layoutX="434.0" layoutY="10.0" prefHeight="28.0" prefWidth="62.0" text="\$" textFill="WHITE">
-                                       <font>
-                                          <Font name="Segoe UI Bold" size="14.0" />
-                                       </font>
-                                       <HBox.margin>
-                                          <Insets left="120.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <Label prefWidth="62.0" text="\$" textFill="WHITE">
-                                 <font>
-                                    <Font name="Segoe UI Bold" size="14.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="662.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <HBox spacing="15.0">
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="850.0" />
-                                 </VBox.margin>
-                                 <children>
-                                    <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@images/ic_cart.png" />
-                                       </image>
-                                       <effect>
-                                          <Bloom />
-                                       </effect>
-                                    </ImageView>
-                                    <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" styleClass="card" stylesheets="@style.css" text="Add to Cart" textAlignment="CENTER" textFill="#a6382a">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                       <cursor>
-                                          <Cursor fx:constant="HAND" />
-                                       </cursor>
-                                    </Button>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </VBox>
+                        <ScrollPane fx:id="scrollpane" prefHeight="299.0" prefWidth="968.0">
+                           <content>
+                              <VBox fx:id="v" prefHeight="295.0" prefWidth="1004.0" />
+                           </content>
+                        </ScrollPane>
+                        <Button mnemonicParsing="false" onAction="#taking_orders" text="Order" />
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" />

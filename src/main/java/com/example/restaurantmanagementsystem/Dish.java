@@ -1,9 +1,22 @@
 package com.example.restaurantmanagementsystem;
 
+import javafx.scene.image.ImageView;
+
 public class Dish {
-    private String name, image_source, color;
+    private String name, image_source, color, description;
     private Integer price;
 
+    public Dish(String name, Integer price, String _description) {
+        this.name = name;
+        this.price = price;
+        description = _description;
+    }
+    public Dish(String name, Integer price, String _description,String _imagesrc) {
+        this.name = name;
+        this.price = price;
+        description = _description;
+        image_source = _imagesrc;
+    }
     public Dish(String name, Integer price) {
         this.name = name;
         this.price = price;
@@ -12,9 +25,14 @@ public class Dish {
     public String getName() {
         return name;
     }
-
+    public String getDescription(){return  description;}
     public String getImgSrc() {
         return image_source;
+    }
+
+    public ImageView getImage(){
+        String src = getImgSrc();
+        return new ImageView(src);
     }
 
     public void setImgSrc(String image_source) {

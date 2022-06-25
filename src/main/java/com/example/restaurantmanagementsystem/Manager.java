@@ -7,15 +7,14 @@ public class Manager {
 
     public Map<String,Integer> loyalty;
     public Menu menu;
+    public Integer id;
     public Order_collection all_order_collection,offline_order_collection,online_order_collection;
     public Sales_collection all_sale_collection,offline_sale_collection,online_sale_collection;
 
     public Manager(){
         loyalty= new HashMap<String,Integer>();
         menu=new Menu();
-        menu.add_dish("Vat",100);
-        menu.add_dish("Fish",100);
-//        System.out.println(menu.get_price("Vat"));
+        id = 0;
         all_order_collection =new Order_collection();
         offline_order_collection =new Order_collection();
         online_order_collection =new Order_collection();
