@@ -235,6 +235,16 @@
                               <TextField fx:id="address_or_table_num" maxWidth="-Infinity" prefHeight="36.0" prefWidth="720.0" />
                            </children>
                         </VBox>
+                        <VBox prefHeight="50.0" prefWidth="1020.0">
+                           <children>
+                              <Label prefHeight="21.0" prefWidth="204.0" text="Enter Discount Percentage" textFill="WHITE">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="discount_on_order" maxWidth="-Infinity" prefHeight="36.0" prefWidth="720.0" />
+                           </children>
+                        </VBox>
                         <ScrollPane fx:id="scrollpane" prefHeight="299.0" prefWidth="968.0">
                            <content>
                               <VBox fx:id="v" prefHeight="295.0" prefWidth="1004.0" />

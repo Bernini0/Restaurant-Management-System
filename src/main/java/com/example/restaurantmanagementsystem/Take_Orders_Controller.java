@@ -31,6 +31,8 @@ public class Take_Orders_Controller {
     private TextField name;
 
     @FXML
+    private TextField discount_on_order;
+    @FXML
     private CheckBox offline;
 
     @FXML
@@ -88,14 +90,14 @@ public class Take_Orders_Controller {
             }
         }
         if(offline.isSelected()==true){
-            Integer discount = 0;
+            Integer discount = cal_discount(discount_on_order.getText());
             man.take_offline_order(man.index,discount,customer_name,dish_count);
             man.index++;
             offline.fire();
 //            man.calculate_sales_and_orders_insight();
         }
         else if(online.isSelected()==true){
-            Integer discount = 0;
+            Integer discount = cal_discount(discount_on_order.getText());
             String address = address_or_table_num.getText();
             man.take_online_order(man.index, discount, customer_name, address,dish_count);
             man.index++;
@@ -104,6 +106,7 @@ public class Take_Orders_Controller {
         if(online.isSelected()==true)online.fire();
         name.clear();
         address_or_table_num.clear();
+        discount_on_order.clear();
         for(int i = 0; i < v.getChildren().size(); i++){
             HBox x = (HBox) v.getChildren().get(i);
             CheckBox c = (CheckBox) x.getChildren().get(0);
@@ -133,6 +136,18 @@ public class Take_Orders_Controller {
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         dtoc.go_to_logout(e);
+    }
+    private boolean checker(String s){
+        try{
+            Integer i = Integer.valueOf(s);
+            return true;
+        }catch (NumberFormatException e){
+            return  false;
+        }
+    }
+    private Integer cal_discount(String s){
+        if(checker(s)==true)return Integer.valueOf(s);
+        else return 0;
     }
 }
 
