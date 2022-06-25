@@ -55,15 +55,18 @@ public class Menu {
     }
 
     public void edit_price_of_dish(String name, Integer new_price){
-        Integer price = prices.get(name);
-        Dish dish_to_be_edited = new Dish(name,price);
         Dish current_dish;
         for(int i=0;i<number_of_dishes;i++) {
             current_dish = all_dishes.get(i);
             if (current_dish.getName().equals(name)) {
                 current_dish.update(new_price);
+                break;
             }
         }
+        current_dish = check_dishes.get(name);
+        current_dish.update(new_price);
+        prices.remove(name);
+        prices.put(current_dish.getName(),new_price);
     }
 
     public Integer get_price(String name) {return prices.get(name);}
