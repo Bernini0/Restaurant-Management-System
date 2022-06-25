@@ -56,7 +56,6 @@ public class Take_Orders_Controller {
         v.setPadding(new Insets(20,20,20,20));
         v.setSpacing(20.0);
         for(int i = 0; i < man.menu.all_dishes.size(); i++){
-
             CheckBox c = new CheckBox();
             c.setText(man.menu.all_dishes.get(i).getName());
             TextField t = new TextField();
@@ -69,6 +68,8 @@ public class Take_Orders_Controller {
     }
     public void taking_orders(){
         Map<Dish,Integer> dish_count = new HashMap<Dish,Integer>();
+        offline.setIndeterminate(false);
+        online.setIndeterminate(false);
         for(int i = 0; i < v.getChildren().size(); i++){
             HBox x = (HBox) v.getChildren().get(i);
             CheckBox c = (CheckBox) x.getChildren().get(0);
@@ -87,14 +88,17 @@ public class Take_Orders_Controller {
         }
         if(offline.isSelected()==true){
             Integer discount = 0;
-            man.take_offline_order(man.id,discount,dish_count);
-            man.id++;
+            man.take_offline_order(man.index,discount,dish_count);
+            man.index++;
             offline.fire();
+//            man.calculate_sales_and_orders_insight();
         }
         else if(online.isSelected()==true){
             Integer discount = 0;
             String address = address_or_table_num.getText();
-            man.take_online_order(man.id, discount, address,dish_count);
+            man.take_online_order(man.index, discount, address,dish_count);
+            man.index++;
+//            man.calculate_sales_and_orders_insight();
         }
         if(online.isSelected()==true)online.fire();
         name.clear();

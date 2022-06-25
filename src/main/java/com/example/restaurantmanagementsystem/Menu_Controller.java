@@ -180,6 +180,7 @@ public class Menu_Controller {
         try{
             price = Integer.valueOf(to_be_updated_price.getText());
             man.menu.edit_price_of_dish(s,price);
+            dtoc.go_to_menu_page(e);
         }catch (NumberFormatException x){
             show_alert();
         }
