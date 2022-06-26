@@ -9,25 +9,24 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Map;
 
-public class Orders_Overview_Controller {
+public class Search_Controller {
+
     @FXML
     private Button account;
 
     @FXML
+    private ImageView click_to_search;
+
+    @FXML
     private Button dashboard;
-
-    @FXML
-    private Label date;
-
-    @FXML
-    private Button logout;
 
     @FXML
     private Button menu1;
@@ -39,58 +38,23 @@ public class Orders_Overview_Controller {
     private Button onsite_orders;
 
     @FXML
-    private Label order11;
-
-    @FXML
-    private Label order12;
-
-    @FXML
-    private Label order13;
-
-    @FXML
-    private Label order14;
-
-    @FXML
-    private Label order21;
-
-    @FXML
-    private Label order22;
-
-    @FXML
-    private Label order23;
-
-    @FXML
-    private Label order24;
-
-    @FXML
-    private Label sales1;
-
-    @FXML
     private Button sales;
 
-    @FXML
-    private Label sales2;
     @FXML
     private TextField search1;
 
     @FXML
-    private Label sales3;
-
-    @FXML
-    private HBox search;
+    private Label search_result;
 
     @FXML
     private HBox toppane;
+
+
     private Parent root;
     private Scene scene;
     private Stage stage;
-
     private Dashboard_to_others_Controller dtoc = new Dashboard_to_others_Controller();
-    public void x(){
-
-    }
     public void go_back_to_dashboard(ActionEvent e) throws IOException {
-//        root =  FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         Show s = new Show();
         s.display(stage,"dashboard.fxml");
@@ -98,14 +62,20 @@ public class Orders_Overview_Controller {
     public void go_to_take_orders(MouseEvent e) throws IOException{
         dtoc.go_to_take_orders(e);
     }
-    public void go_to_sales_insight(MouseEvent e) throws IOException{
-        dtoc.go_to_sales_insight(e);
+    public void go_to_Orders_Overview(MouseEvent e) throws IOException{
+        dtoc.go_to_Orders_Overview(e);
     }
     public void go_to_menu_page(MouseEvent e) throws IOException{
         dtoc.go_to_menu_page(e);
     }
+    public void go_to_sales_insight(MouseEvent e) throws IOException{
+        dtoc.go_to_sales_insight(e);
+    }
     public void go_to_order_status(MouseEvent e) throws IOException{
         dtoc.go_to_order_status(e);
+    }
+    public void go_to_logout(MouseEvent e) throws IOException{
+        dtoc.go_to_logout(e);
     }
     public void search(MouseEvent e) throws IOException{
         String s = search1.getText();
@@ -129,21 +99,20 @@ public class Orders_Overview_Controller {
             Show.dis_play(root, e);
         }
     }
-    public void go_to_logout(MouseEvent e) throws IOException{
-        dtoc.go_to_logout(e);
-    }
-    public void setter(String m, String n, String o, String p, String q, String r, String s, String t, String u, String v,String w){
-        sales1.setText(m);
-        sales2.setText(n);
-        sales3.setText(o);
-        order11.setText(p);
-        order12.setText(q);
-        order13.setText(r);
-        order14.setText(s);
-        order21.setText(t);
-        order22.setText(u);
-        order23.setText(v);
-        order24.setText(w);
-
+    public void set_search_res(String s){
+//        System.out.println(s);
+        String p;
+        if(s.compareToIgnoreCase("add dish")==0) {
+            p = "Go to Menu Page";
+        }
+        else if(s.compareToIgnoreCase("delete dish")==0 || s.compareToIgnoreCase("remove dish")==0)p = "Go To Menu Page.";
+        else if(s.compareToIgnoreCase("update dish")==0)p = "Go To Menu Page.";
+        else if(s.compareToIgnoreCase("Update Order")==0)p = "Go To Order Status.";
+        else if(s.compareToIgnoreCase("total sales")==0 || s.compareToIgnoreCase("orders of the day")==0 || s.compareToIgnoreCase("on the way")==0 || s.compareToIgnoreCase("total orders")==0|| s.compareToIgnoreCase("orders overview")==0 || s.compareToIgnoreCase("order overview")==0)p = "Go To Order Overview.";
+        else if(s.compareToIgnoreCase("profit")==0 || s.compareToIgnoreCase("loss")==0 || s.compareToIgnoreCase("cost")==0 || s.compareToIgnoreCase("sales insight")==0 || s.compareToIgnoreCase("sales")==0)p="Go To Sales Insight.";
+        else if(s.compareToIgnoreCase("order")==0)p = "Go To Take Orders.";
+        else p = "Not Found.";
+//        System.out.println(s+" " +p);
+        search_result.setText(p);
     }
 }

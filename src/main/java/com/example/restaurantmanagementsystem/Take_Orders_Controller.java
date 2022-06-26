@@ -43,6 +43,8 @@ public class Take_Orders_Controller {
 
     @FXML
     private HBox search;
+    @FXML
+    private TextField search1;
 
     @FXML
     private VBox v;
@@ -133,6 +135,28 @@ public class Take_Orders_Controller {
     }
     public void go_to_order_status(MouseEvent e) throws IOException{
         dtoc.go_to_order_status(e);
+    }
+    public void search(MouseEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
+    }
+    public void search1(ActionEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         dtoc.go_to_logout(e);

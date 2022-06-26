@@ -39,6 +39,9 @@ public class Order_Status_Controller {
     private Button sales;
 
     @FXML
+    private TextField search1;
+
+    @FXML
     private RadioButton toggler;
     @FXML
     private ScrollPane scrollpane;
@@ -137,5 +140,27 @@ public class Order_Status_Controller {
         Integer i = Integer.valueOf(to_be_updated_order.getText());
         man.update_order(i);
         change(e);
+    }
+    public void search(MouseEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
+    }
+    public void search1(ActionEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
     }
 }

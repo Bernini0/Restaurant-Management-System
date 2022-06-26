@@ -1,12 +1,17 @@
 package com.example.restaurantmanagementsystem;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +26,48 @@ import static com.example.restaurantmanagementsystem.Loader.man;
 public class Dashboard_to_others_Controller {
     @FXML
     Label user_label;
+
+    @FXML
+    private Button account;
+
+    @FXML
+    private ImageView click_to_search;
+
+    @FXML
+    private Button dashboard;
+
+    @FXML
+    private Button menu1;
+
+    @FXML
+    private Label money;
+
+    @FXML
+    private Button online_orders;
+
+    @FXML
+    private Button onsite_orders;
+
+    @FXML
+    private Button sales;
+
+    @FXML
+    private Label sales1;
+
+    @FXML
+    private Label sales11;
+
+    @FXML
+    private Label sales111;
+
+    @FXML
+    private HBox search;
+
+    @FXML
+    private TextField search1;
+
+    @FXML
+    private HBox toppane;
 
     private Parent root;
     private Scene scene;
@@ -71,6 +118,30 @@ public class Dashboard_to_others_Controller {
         Order_Status_Controller o_s_c = loader.getController();
         o_s_c.set_scrollpane(1);
         Show.dis_play(root, e);
+    }
+
+    public void go_to_search(MouseEvent e)throws IOException{
+
+        String s = search1.getText();
+        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
+    }
+    public void search1(ActionEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();

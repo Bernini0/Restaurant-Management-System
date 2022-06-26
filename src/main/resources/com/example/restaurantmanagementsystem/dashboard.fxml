@@ -154,12 +154,12 @@
                            <children>
                               <HBox fx:id="search" alignment="TOP_CENTER" prefHeight="53.0" prefWidth="303.0" spacing="10.0" styleClass="search-container" stylesheets="@style.css">
                                  <children>
-                                    <ImageView fitHeight="35.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fx:id="click_to_search" fitHeight="35.0" fitWidth="30.0" onMouseClicked="#go_to_search" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@images/search.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField prefHeight="30.0" prefWidth="202.0" promptText="search here" stylesheets="@style.css">
+                                    <TextField fx:id="search1" onAction="#search1" prefHeight="30.0" prefWidth="202.0" promptText="search here" stylesheets="@style.css">
                                        <font>
                                           <Font size="14.0" />
                                        </font>

@@ -2,6 +2,7 @@ package com.example.restaurantmanagementsystem;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -54,6 +55,9 @@ public class Menu_Controller {
     private Button online_orders;
 
     @FXML
+    private TextField search1;
+
+    @FXML
     private Button onsite_orders;
 
     @FXML
@@ -93,6 +97,28 @@ public class Menu_Controller {
     }
     public void go_to_account_page(MouseEvent e) throws IOException{
         dtoc.go_to_order_status(e);
+    }
+    public void search(MouseEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
+    }
+    public void search1(ActionEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         dtoc.go_to_logout(e);

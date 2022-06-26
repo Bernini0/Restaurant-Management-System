@@ -8,6 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -19,13 +21,13 @@ public class Sales_Insight_Controller {
     private Button account;
 
     @FXML
+    private ImageView click_to_search;
+
+    @FXML
     private Button dashboard;
 
     @FXML
     private Label date;
-
-    @FXML
-    private Button logout;
 
     @FXML
     private Button menu1;
@@ -76,8 +78,10 @@ public class Sales_Insight_Controller {
     private HBox search;
 
     @FXML
-    private HBox toppane;
+    private TextField search1;
 
+    @FXML
+    private HBox toppane;
     private Parent root;
     private Scene scene;
     private Stage stage;
@@ -98,6 +102,28 @@ public class Sales_Insight_Controller {
     }
     public void go_to_order_status(MouseEvent e) throws IOException{
         dtoc.go_to_order_status(e);
+    }
+    public void search(MouseEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
+    }
+    public void search1(ActionEvent e) throws IOException{
+        String s = search1.getText();
+//        System.out.println(s);
+        if(s!="") {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
+            root = loader.load();
+            Search_Controller s_c = loader.getController();
+            s_c.set_search_res(s);
+            Show.dis_play(root, e);
+        }
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         dtoc.go_to_logout(e);

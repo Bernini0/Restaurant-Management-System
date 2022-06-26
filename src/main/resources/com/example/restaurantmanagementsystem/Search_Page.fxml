@@ -4,8 +4,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Order_Status_Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Search_Controller">
     <children>
         <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1310.0">
             <left>
@@ -88,7 +86,7 @@
                                         <Image url="@images/account.png" />
                                     </image>
                                 </ImageView>
-                                <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
+                                <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" onMouseClicked="#go_to_order_status" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
                                     <font>
                                         <Font size="14.0" />
                                     </font>
@@ -156,7 +154,7 @@
                                     <children>
                                         <HBox fx:id="search" alignment="TOP_CENTER" prefHeight="53.0" prefWidth="303.0" spacing="10.0" styleClass="search-container" stylesheets="@style.css">
                                             <children>
-                                                <ImageView fitHeight="35.0" fitWidth="30.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fx:id="click_to_search" fitHeight="35.0" fitWidth="30.0" onMouseClicked="#search" pickOnBounds="true" preserveRatio="true">
                                                     <image>
                                                         <Image url="@images/search.png" />
                                                     </image>
@@ -186,73 +184,15 @@
                                 </HBox>
                             </children>
                         </HBox>
-                  <HBox prefHeight="680.0" prefWidth="1060.0">
+                        <HBox alignment="CENTER" prefHeight="680.0" prefWidth="1060.0">
                      <children>
-                        <VBox prefHeight="679.0" prefWidth="576.0">
-                           <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="68.0" prefWidth="347.0" style="-fx-font-weight: bold;" text="All Order Status">
-                                       <font>
-                                          <Font size="30.0" />
-                                       </font>
-                                    </Label>
-                                    <RadioButton fx:id="toggler" mnemonicParsing="false" onMouseClicked="#change" prefHeight="68.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Pending Orders Only" wrapText="true">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </RadioButton>
-                                 </children>
-                              </HBox>
-                              <ScrollPane fx:id="scrollpane" opacity="0.6" prefHeight="578.0" prefWidth="545.0">
-                                 <content>
-                                    <VBox fx:id="vbox" prefHeight="573.0" prefWidth="540.0">
-                                       <children>
-                                          <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="246.0" spacing="20.0">
-                                             <children>
-                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="94.0" style="-fx-font-weight: bold;" text="Order No." />
-                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="247.0" style="-fx-font-weight: bold;" text="Customer Name" />
-                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Order Status" />
-                                             </children>
-                                          </HBox>
-                                       </children></VBox>
-                                 </content></ScrollPane>
-                           </children>
-                        </VBox>
-                        <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="679.0" prefWidth="546.0">
-                           <children>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="68.0" prefWidth="377.0" style="-fx-font-weight: bold;" text="Update Order Status">
-                                       <font>
-                                          <Font size="30.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="BOTTOM_LEFT" prefHeight="275.0" prefWidth="515.0" spacing="20.0">
-                                 <children>
-                                    <Label alignment="CENTER" prefHeight="31.0" prefWidth="234.0" text="Order To Be Updated" textFill="#f2e6e6" wrapText="true">
-                                       <font>
-                                          <Font size="16.0" />
-                                       </font></Label>
-                                    <TextField fx:id="to_be_updated_order" alignment="CENTER" prefHeight="27.0" prefWidth="158.0" />
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                                 </padding>
-                              </HBox>
-                              <Button mnemonicParsing="false" onMouseClicked="#update_order" prefHeight="34.0" prefWidth="148.0" text="Update Order">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <opaqueInsets>
-                                    <Insets bottom="20.0" right="20.0" top="20.0" />
-                                 </opaqueInsets></Button>
-                           </children>
-                        </VBox>
+                        <Label fx:id="search_result" alignment="CENTER" prefHeight="668.0" prefWidth="981.0" wrapText="true">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
                      </children>
-                  </HBox>
+                        </HBox>
                     </children>
                 </VBox>
             </center>
