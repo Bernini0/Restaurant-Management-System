@@ -191,14 +191,17 @@ public class Menu_Controller {
                 show_alert();
             }
         }
-        else{
+        else {
             show_alert();
         }
+        man.write_in_data();
     }
     public void remove_dish(MouseEvent e)throws IOException{
         String s = dish_to_be_removed.getText();
         man.menu.remove_dish(s);
         dtoc.go_to_menu_page(e);
+
+        man.write_in_data();
     }
     public void update_dish(MouseEvent e)throws IOException{
         String s = to_be_updated_name.getText();
@@ -210,6 +213,9 @@ public class Menu_Controller {
         }catch (NumberFormatException x){
             show_alert();
         }
+
+        man.write_in_data();
+
     }
     public boolean check_image_source(String src){
         try{

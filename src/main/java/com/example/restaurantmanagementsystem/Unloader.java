@@ -15,23 +15,28 @@ public class Unloader {
 
             String to_be_written=String.valueOf(man.menu.number_of_dishes);
             Menu_unloader.write(to_be_written);
+            Menu_unloader.newLine();
 
             for(Map.Entry<String,Dish> entry:man.menu.check_dishes.entrySet()){
                 Dish this_dish=entry.getValue();
 
                 to_be_written=this_dish.getName();
                 Menu_unloader.write(to_be_written);
+                Menu_unloader.newLine();
 
                 to_be_written=String.valueOf(this_dish.getPrice());
                 Menu_unloader.write(to_be_written);
+                Menu_unloader.newLine();
 
                 to_be_written=this_dish.getDescription();
                 if(to_be_written==null) to_be_written="****";
                 Menu_unloader.write(to_be_written);
+                Menu_unloader.newLine();
 
                 to_be_written=this_dish.getImgSrc();
                 if(to_be_written==null) to_be_written="****";
                 Menu_unloader.write(to_be_written);
+                Menu_unloader.newLine();
             }
 
             Menu_unloader.close();

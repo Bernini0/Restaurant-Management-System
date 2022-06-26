@@ -118,5 +118,7 @@ public class Manager {
         total_cost_online = total_sale_online-net_profit_online;
     }
 
+    public void write_in_data(){ new Unloader(); }
+
 
 }
