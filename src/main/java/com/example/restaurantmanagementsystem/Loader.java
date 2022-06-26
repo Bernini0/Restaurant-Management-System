@@ -2,24 +2,47 @@ package com.example.restaurantmanagementsystem;
 
 
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Loader {
     public static Manager man = new Manager();
     Loader(){
-        //Will take input from Files
+        try{
+            File Menu_file = new File("src/main/resources/com/example/restaurantmanagementsystem/Data.txt");
+            BufferedReader Menu_loader = new BufferedReader(new FileReader(Menu_file));
+            Integer number_of_dishes;
 
-        //Menu will also be loaded here
+            String input_data;
+            input_data=Menu_loader.readLine();
+            number_of_dishes=Integer.valueOf(input_data);
 
-        man.menu.add_dish("Bento",100,"a","images/bento.jpg");
-        man.menu.add_dish("Waffles",200,"b","images/waffle.jpg");
-        Map<Dish,Integer> dish_count = new HashMap<Dish,Integer>();
-//        dish_count.put(new Dish("Vat",100,"a","images/time.png"),1);
-//        dish_count.put(new Dish("Murgi",100,"b","images/time.png"),1);
-//        for(int i = 0; i < 5; i++){
-//            man.take_offline_order(i,10,dish_count);
-//            man.index++;
-//        }
+            for(int i=0;i<number_of_dishes;i++){
+                String Name,des,img_src;
+                Integer price;
+
+                input_data=Menu_loader.readLine();
+                Name=input_data;
+
+                input_data=Menu_loader.readLine();
+                price=Integer.valueOf(input_data);
+
+                input_data=Menu_loader.readLine();
+                des=input_data;
+
+                input_data=Menu_loader.readLine();
+                img_src=input_data;
+
+                if(img_src.equals("****")&&des.equals("****")) man.menu.add_dish(Name,price);
+                else if(img_src.equals("****")) man.menu.add_dish(Name,price,des);
+                else man.menu.add_dish(Name,price,des,img_src);
+            }
+
+            Menu_loader.close();
+        }
+        catch(Exception e){System.out.println(e);}
     }
 }
