@@ -18,7 +18,7 @@ import javafx.util.Pair;
 
 import java.io.IOException;
 
-import static com.example.restaurantmanagementsystem.HelloController.names;
+import static com.example.restaurantmanagementsystem.Loader.names;
 
 public class Sign_Up_to_Login {
 

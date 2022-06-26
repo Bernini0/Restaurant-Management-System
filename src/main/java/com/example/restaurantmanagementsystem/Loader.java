@@ -2,14 +2,18 @@ package com.example.restaurantmanagementsystem;
 
 
 
+import javafx.util.Pair;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Loader {
     public static Manager man = new Manager();
+    public static ArrayList<Pair<String,String>> names = new ArrayList<Pair<String,String>>();
     Loader(){
         try{
             File Menu_file = new File("src/main/resources/com/example/restaurantmanagementsystem/Data.txt");
@@ -27,8 +31,8 @@ public class Loader {
                 input_data=Menu_loader.readLine();
                 Name=input_data;
 
-                input_data=Menu_loader.readLine();
-                price=Integer.valueOf(input_data);
+                input_data = Menu_loader.readLine();
+                price = Integer.valueOf(input_data);
 
                 input_data=Menu_loader.readLine();
                 des=input_data;

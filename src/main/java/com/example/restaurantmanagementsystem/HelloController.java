@@ -23,12 +23,16 @@ import javafx.util.Pair;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
+
+import static com.example.restaurantmanagementsystem.Loader.man;
+import static com.example.restaurantmanagementsystem.Loader.names;
 
 public class HelloController {
 
     private Parent root;
     private Stage stage;
-    public static ArrayList<Pair<String,String>> names = new ArrayList<Pair<String,String>>();
+
     @FXML
     private Label forgot_pw;
 
@@ -60,7 +64,8 @@ public class HelloController {
     String actual_user = "Tasnim";
     String actual_pass = "1234";
     public void go_to_Dashboard(MouseEvent event) throws IOException {
-        names.add(new Pair<String,String>(actual_user,actual_pass));
+
+        names.add(new Pair<String, String>(actual_user, actual_pass));
         String name = username.getText();
         String pass = password.getText();
         System.out.println(name);
@@ -70,11 +75,15 @@ public class HelloController {
             Pair<String,String> nem = names.get(i);
             if (name.equals(nem.getKey()) && pass.equals(nem.getValue())) {
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                FXMLLoader loader= new FXMLLoader(getClass().getResource("dashboard.fxml"));
+                root = loader.load();
+                Dashboard_to_others_Controller dtoc = loader.getController();
+                dtoc.set_money(String.valueOf(man.today_sale));
+                dtoc.set_sales1(String.valueOf(man.today_order_count));
+                dtoc.set_sales11(String.valueOf(man.on_the_way));
+                dtoc.set_sales111(new Date().toString());
                 yes = true;
-//                root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
-//                Show.dis_play(root, event);
-                Show s = new Show();
-                s.display(stage,"dashboard.fxml");
+                Show.dis_play(root,event);
             }
         }
         if(yes == false){

@@ -15,6 +15,7 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.Map;
 
 import static com.example.restaurantmanagementsystem.HelloApplication.l;
@@ -86,6 +87,7 @@ public class Dashboard_to_others_Controller {
         Orders_Overview_Controller ooc = loader.getController();
         man.calculate_sales_and_orders_insight();
         ooc.setter(Integer.toString(man.today_sale),Integer.toString(man.today_order_count),Integer.toString(man.on_the_way),Integer.toString(man.onsite_order_count),Integer.toString(man.onsite_order_count-man.onsite_delivered_order_count),Integer.toString(man.online_order_count),Integer.toString((int)(man.today_sale*(0.2))),Integer.toString(man.onsite_delivered_order_count),Integer.toString(man.onsite_delivered_order_count),Integer.toString(man.online_delivared_order_count),Integer.toString(man.net_loss_online+man.net_loss_onsite));
+        ooc.set_date(new Date().toString());
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -98,6 +100,7 @@ public class Dashboard_to_others_Controller {
         man.calculate_sales_and_orders_insight();
         System.out.println(man.total_sale_onsite);
         sc4.setter(Integer.toString(man.today_sale),Integer.toString(man.today_order_count),Integer.toString(man.on_the_way),Integer.toString(man.total_sale_onsite),Integer.toString(man.net_profit_onsite),Integer.toString(man.total_sale_online),Integer.toString(man.net_profit_online),Integer.toString(man.total_cost_onsite),Integer.toString(man.net_loss_onsite),Integer.toString(man.total_cost_online),Integer.toString(man.net_loss_online));
+        sc4.set_date(new Date().toString());
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -118,6 +121,7 @@ public class Dashboard_to_others_Controller {
         Order_Status_Controller o_s_c = loader.getController();
         o_s_c.set_scrollpane(1);
         Show.dis_play(root, e);
+
     }
 
     public void go_to_search(MouseEvent e)throws IOException{
@@ -148,4 +152,9 @@ public class Dashboard_to_others_Controller {
         Show s = new Show();
         s.display(stage,"Login_Page.fxml");
     }
+
+    public void set_money(String s){money.setText(s);}
+    public void set_sales1(String s){sales1.setText(s);}
+    public void set_sales11(String s){sales11.setText(s);}
+    public void set_sales111(String s){sales111.setText(s);}
 }

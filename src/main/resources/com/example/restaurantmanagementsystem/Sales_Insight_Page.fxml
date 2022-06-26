@@ -281,9 +281,9 @@
                                           </ImageView>
                                        </children>
                                     </HBox>
-                                    <Label fx:id="date" alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="146.0" text="24/03/2022">
+                                    <Label fx:id="date" alignment="TOP_CENTER" prefHeight="69.0" prefWidth="233.0" text="24/03/2022" textAlignment="CENTER" wrapText="true">
                                        <font>
-                                          <Font name="System Bold" size="24.0" />
+                                          <Font name="System Bold" size="16.0" />
                                        </font>
                                     </Label>
                                  </children>

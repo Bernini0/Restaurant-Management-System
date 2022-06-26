@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Date;
 
 import static com.example.restaurantmanagementsystem.Loader.man;
 
@@ -82,9 +83,14 @@ public class Menu_Controller {
     private VBox vbox;
 
     public void go_back_to_dashboard(ActionEvent e) throws IOException {
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Show s = new Show();
-        s.display(stage,"dashboard.fxml");
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("dashboard.fxml"));
+        root = loader.load();
+        Dashboard_to_others_Controller dtoc = loader.getController();
+        dtoc.set_money(String.valueOf(man.today_sale));
+        dtoc.set_sales1(String.valueOf(man.today_order_count));
+        dtoc.set_sales11(String.valueOf(man.on_the_way));
+        dtoc.set_sales111(new Date().toString());
+        Show.dis_play(root,e);
     }
     public void go_to_take_orders(MouseEvent e) throws IOException {
         dtoc.go_to_take_orders(e);

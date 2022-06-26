@@ -7,10 +7,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -18,6 +15,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -75,37 +73,52 @@ public class Take_Orders_Controller {
         Map<Dish,Integer> dish_count = new HashMap<Dish,Integer>();
         offline.setIndeterminate(false);
         online.setIndeterminate(false);
+        boolean yes = true;
         for(int i = 0; i < v.getChildren().size(); i++){
+
             HBox x = (HBox) v.getChildren().get(i);
             CheckBox c = (CheckBox) x.getChildren().get(0);
             TextField t = (TextField) x.getChildren().get(1);
-
             Label l = (Label) x.getChildren().get(2);
-            System.out.println("hocche");
+
             String s = t.getText();
-            if(s!= "" && c.isSelected()==true){
-                System.out.println(Integer.valueOf(l.getText()));
+
+            if((s!= "" || s!="0") && c.isSelected()==true){
+
                 Dish d = man.menu.check_dishes.get(c.getText());
-                System.out.println(d.getName() + " " + d.getPrice() + " " + d.getDescription() + " " + d.getImgSrc());
-                dish_count.put(d,Integer.valueOf(s));
+
+                try {
+                    dish_count.put(d, Integer.valueOf(s));
+                }catch (NumberFormatException p){
+                    yes = false;
+                    break;
+                }
 
             }
         }
-        if(offline.isSelected()==true){
+        if(yes==false)show_alert();
+        else if(dish_count.size()==0)show_alert();
+        else if(online.isSelected()==true && offline.isSelected()==true)show_alert();
+        else if(offline.isSelected()==true){
             Integer discount = cal_discount(discount_on_order.getText());
             man.take_offline_order(man.index,discount,customer_name,dish_count);
             man.index++;
-            offline.fire();
+            man.calculate_sales_and_orders_insight();
 //            man.calculate_sales_and_orders_insight();
         }
         else if(online.isSelected()==true){
             Integer discount = cal_discount(discount_on_order.getText());
             String address = address_or_table_num.getText();
-            man.take_online_order(man.index, discount, customer_name, address,dish_count);
-            man.index++;
-//            man.calculate_sales_and_orders_insight();
+            if(address=="")show_alert();
+            else {
+                man.take_online_order(man.index, discount, customer_name, address, dish_count);
+                man.index++;
+                man.calculate_sales_and_orders_insight();
+            }
         }
+        else show_alert();
         if(online.isSelected()==true)online.fire();
+        if(offline.isSelected()==true)offline.fire();
         name.clear();
         address_or_table_num.clear();
         discount_on_order.clear();
@@ -115,14 +128,19 @@ public class Take_Orders_Controller {
             TextField t = (TextField) x.getChildren().get(1);
             if(c.isSelected()==true){
                 c.fire();
-                t.clear();
             }
+            t.clear();
         }
     }
     public void go_back_to_dashboard(ActionEvent e) throws IOException {
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Show s = new Show();
-        s.display(stage,"dashboard.fxml");
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("dashboard.fxml"));
+        root = loader.load();
+        Dashboard_to_others_Controller dtoc = loader.getController();
+        dtoc.set_money(String.valueOf(man.today_sale));
+        dtoc.set_sales1(String.valueOf(man.today_order_count));
+        dtoc.set_sales11(String.valueOf(man.on_the_way));
+        dtoc.set_sales111(new Date().toString());
+        Show.dis_play(root,e);
     }
     public void go_to_Orders_Overview(MouseEvent e) throws IOException{
         dtoc.go_to_Orders_Overview(e);
@@ -172,6 +190,14 @@ public class Take_Orders_Controller {
     private Integer cal_discount(String s){
         if(checker(s)==true)return Integer.valueOf(s);
         else return 0;
+    }
+    public void show_alert(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);// line 1
+        alert.setTitle("Information Dialog Box");// line 2
+        alert.setHeaderText("Wrong Information");// line 3
+        alert.setContentText("Information that was provided is incorrect please check again");// line 4
+        alert.showAndWait();
+
     }
 }
 
