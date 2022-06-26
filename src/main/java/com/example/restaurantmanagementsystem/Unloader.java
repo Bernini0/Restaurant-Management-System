@@ -1,11 +1,15 @@
 package com.example.restaurantmanagementsystem;
 
+import javafx.util.Pair;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Map;
 
 import static com.example.restaurantmanagementsystem.Loader.man;
+import static com.example.restaurantmanagementsystem.Loader.names;
 
 public class Unloader {
     Unloader(){
@@ -43,5 +47,26 @@ public class Unloader {
 
         }
         catch(Exception e){System.out.println(e);}
+    }
+    Unloader(Integer x){
+        File Login_file = new File("src/main/resources/com/example/restaurantmanagementsystem/Login.txt");
+        try {
+            BufferedWriter Login_unloader = new BufferedWriter(new FileWriter(Login_file));
+            for(int i = 0; i < names.size(); i++){
+
+                String s = names.get(i).getKey();
+                Login_unloader.write(s);
+                Login_unloader.newLine();
+
+                s = names.get(i).getValue();
+                Login_unloader.write(s);
+                Login_unloader.newLine();
+            }
+
+            Login_unloader.close();
+
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 }

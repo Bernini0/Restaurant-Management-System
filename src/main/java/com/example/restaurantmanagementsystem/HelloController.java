@@ -60,12 +60,8 @@ public class HelloController {
     @FXML
     private Label welcome;
 
-
-    String actual_user = "Tasnim";
-    String actual_pass = "1234";
     public void go_to_Dashboard(MouseEvent event) throws IOException {
 
-        names.add(new Pair<String, String>(actual_user, actual_pass));
         String name = username.getText();
         String pass = password.getText();
         System.out.println(name);

@@ -67,6 +67,7 @@ public class Sign_Up_to_Login {
         String name = username.getText();
         Pair<String,String> pair = new Pair<String,String>(name,pass);
         names.add(pair);
+        Unloader u = new Unloader(1);
         Show s = new Show();
         s.display(stage,"Login_Page.fxml");
 //        Show.dis_play(p,event);

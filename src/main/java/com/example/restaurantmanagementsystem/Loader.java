@@ -45,6 +45,18 @@ public class Loader {
             }
 
             Menu_loader.close();
+
+            File Login_file = new File("src/main/resources/com/example/restaurantmanagementsystem/Login.txt");
+            BufferedReader Login_loader = new BufferedReader(new FileReader(Login_file));
+
+
+            while ((input_data = Login_loader.readLine())!=null){
+                String username = input_data;
+                String pass = Login_loader.readLine();
+                names.add(new Pair<>(username,pass));
+            }
+
+            Login_loader.close();
         }
         catch(Exception e){System.out.println(e);}
     }
