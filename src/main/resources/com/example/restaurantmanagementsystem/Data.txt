@@ -4,10 +4,6 @@ Waffles
 d
 images/waffle.jpg
 Bento
-100
-d
+12
+ads
 images/bento.jpg
-Trifle
-1000
-asdf
-images/raspberry.jpg

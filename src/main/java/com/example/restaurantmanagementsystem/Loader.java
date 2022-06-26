@@ -36,9 +36,8 @@ public class Loader {
                 input_data=Menu_loader.readLine();
                 img_src=input_data;
 
-                if(img_src.equals("****")&&des.equals("****")) man.menu.add_dish(Name,price);
-                else if(img_src.equals("****")) man.menu.add_dish(Name,price,des);
-                else man.menu.add_dish(Name,price,des,img_src);
+                if(des.equals("****")) des="";
+                man.menu.add_dish(Name,price,des,img_src);
             }
 
             Menu_loader.close();

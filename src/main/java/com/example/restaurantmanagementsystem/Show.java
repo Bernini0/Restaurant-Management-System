@@ -27,6 +27,7 @@ public class Show {
         Scene scene = new Scene(root);
         stage.setTitle("Hello!");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
     public void display(Stage stage, String filename) throws IOException {
@@ -48,6 +49,7 @@ public class Show {
         });
         stage.setTitle("Hello!");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 }
