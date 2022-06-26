@@ -68,24 +68,9 @@ public class Manager {
         all_order_collection.update(id);
         System.out.println("all order collection updated");
         Order current_order=all_order_collection.all_orders.get(id);
-//        if(current_order.getIsDelivered()==true) {
-//            all_sale_collection.update(id,current_order.total,true);
-//        }
-//        if(current_order.getIsOnline()==true){
-//            online_order_collection.update(id);
-//            if(current_order.getIsDelivered()==true) online_sale_collection.update(id,current_order.total,true);
-//        }
-//        else{
-//
-//            offline_order_collection.update(id);
-//            System.out.println("offline order collection updated");
-//            if(current_order.getIsDelivered()==true) offline_sale_collection.update(id,current_order.total,true);
-//        }
     }
 
-    private void setting(Integer a, Integer b, Integer c, Integer d, Integer e, Integer g, Integer f, Integer h, Integer i, Integer j, Integer k,Integer l, Integer m, Integer n, Integer o){
-        a = b = c = d = e = f = g = h = i = j = k = l = m = n = o = 0;
-    }
+
     private double profit(double a){
         return (a*(0.2));
     }
