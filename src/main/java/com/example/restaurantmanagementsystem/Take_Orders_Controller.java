@@ -59,9 +59,18 @@ public class Take_Orders_Controller {
         v.setSpacing(20.0);
         for(int i = 0; i < man.menu.all_dishes.size(); i++){
             CheckBox c = new CheckBox();
+            c.setPrefSize(228,-1);
+            c.setMaxSize(228,-1);
+            c.setMinSize(228,-1);
             c.setText(man.menu.all_dishes.get(i).getName());
             TextField t = new TextField();
+            t.setPrefSize(336,-1);
+            t.setMaxSize(336,-1);
+            t.setMinSize(336,-1);
             Label l2 = new Label(String.valueOf(man.menu.all_dishes.get(i).getPrice()));
+            l2.setPrefSize(341,-1);
+            l2.setMaxSize(341,-1);
+            l2.setMinSize(341,-1);
             HBox x = new HBox(c,t,l2);
             x.setSpacing(20.0);
             v.getChildren().add(x);

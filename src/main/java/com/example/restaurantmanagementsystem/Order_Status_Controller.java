@@ -163,7 +163,6 @@ public class Order_Status_Controller {
     }
     public void search1(ActionEvent e) throws IOException{
         String s = search1.getText();
-//        System.out.println(s);
         if(s!="") {
             FXMLLoader loader= new FXMLLoader(getClass().getResource("Search_Page.fxml"));
             root = loader.load();
