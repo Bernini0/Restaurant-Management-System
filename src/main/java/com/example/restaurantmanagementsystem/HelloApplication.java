@@ -34,7 +34,7 @@ public class HelloApplication extends Application {
             stage.setX(event.getScreenX() - x);
             stage.setY(event.getScreenY() - y);
         });
-        stage.setTitle("Hello!");
+        stage.setTitle("Smart Restaurant Management System");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

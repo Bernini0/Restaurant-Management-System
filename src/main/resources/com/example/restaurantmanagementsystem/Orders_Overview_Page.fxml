@@ -62,16 +62,16 @@
                         </Button>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="30.0" layoutY="425.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="primary-bg2" stylesheets="@style.css">
+                  <HBox alignment="CENTER" layoutX="30.0" layoutY="425.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="chosen-item-card" stylesheets="@style.css">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/online_order.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="online_orders" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Orders Overview">
+                        <Button fx:id="online_orders" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="chosen-item-card" stylesheets="@style.css" text="Orders Overview">
                            <font>
-                              <Font name="Segoe UI" size="14.0" />
+                              <Font name="Segoe UI Bold" size="14.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -160,9 +160,9 @@
                      <children>
                         <Pane prefHeight="74.0" prefWidth="768.0" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label alignment="CENTER" layoutX="1.0" layoutY="6.0" prefHeight="62.0" prefWidth="701.0" text="Smart Restaurant Management Systeem" textAlignment="CENTER" textFill="#290451">
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="6.0" prefHeight="62.0" prefWidth="701.0" text="Smart Restaurant Management System" textAlignment="CENTER" textFill="#290451">
                                  <font>
-                                    <Font name="French Script MT" size="48.0" />
+                                    <Font name="Stencil" size="32.0" />
                                  </font>
                               </Label>
                            </children>

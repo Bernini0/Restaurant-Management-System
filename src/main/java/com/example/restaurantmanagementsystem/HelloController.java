@@ -84,9 +84,9 @@ public class HelloController {
         }
         if(yes == false){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);// line 1
-            alert.setTitle("Information Dialog Box");// line 2
+            alert.setTitle("Error!");// line 2
             alert.setHeaderText("Incorrect Credential");// line 3
-            alert.setContentText("If you forgot your Pass contact admin");// line 4
+            alert.setContentText("Please re-enter the credentials and try again.");// line 4
             alert.showAndWait();
         }
 //        Show s = new Show();
@@ -100,5 +100,13 @@ public class HelloController {
 //        Show.dis_play(root,event);
 //        Show s = new Show();
 //        s.dis_play(root,e);
+    }
+
+    public void display_message(MouseEvent event) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);// line 1
+        alert.setTitle("Sorry!");// line 2
+        alert.setHeaderText("A case of forgetfulness :')");// line 3
+        alert.setContentText("If you forgot your password, please contact the admin.");// line 4
+        alert.showAndWait();
     }
 }

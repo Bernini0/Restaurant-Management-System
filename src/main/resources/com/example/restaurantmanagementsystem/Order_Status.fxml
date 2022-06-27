@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Order_Status_Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaurantmanagementsystem.Order_Status_Controller">
     <children>
         <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1310.0">
             <left>
@@ -81,16 +72,16 @@
                                 </Button>
                             </children>
                         </HBox>
-                        <HBox alignment="CENTER" layoutX="30.0" layoutY="524.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="primary-bg2" stylesheets="@style.css">
+                        <HBox alignment="CENTER" layoutX="30.0" layoutY="524.0" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="chosen-item-card" stylesheets="@style.css">
                             <children>
                                 <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@images/account.png" />
                                     </image>
                                 </ImageView>
-                                <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Order Status">
+                                <Button fx:id="account" layoutY="18.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="160.0" styleClass="chosen-item-card" stylesheets="@style.css" text="Order Status">
                                     <font>
-                                        <Font size="14.0" />
+                                        <Font name="Segoe UI Bold" size="14.0" />
                                     </font>
                                     <cursor>
                                         <Cursor fx:constant="HAND" />
@@ -162,9 +153,9 @@
                             <children>
                                 <Pane prefHeight="74.0" prefWidth="768.0" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <Label alignment="CENTER" layoutX="1.0" layoutY="6.0" prefHeight="62.0" prefWidth="701.0" text="Smart Restaurant Management Systeem" textAlignment="CENTER" textFill="#290451">
+                                        <Label alignment="CENTER" layoutX="1.0" layoutY="6.0" prefHeight="62.0" prefWidth="701.0" text="Smart Restaurant Management System" textAlignment="CENTER" textFill="#290451">
                                             <font>
-                                                <Font name="French Script MT" size="48.0" />
+                                                <Font name="Stencil" size="32.0" />
                                             </font>
                                         </Label>
                                     </children>
@@ -209,14 +200,14 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Label fx:id="order_status_label" alignment="CENTER" prefHeight="68.0" prefWidth="347.0" style="-fx-font-weight: bold;" text="All Order Status">
+                                    <Label fx:id="order_status_label" alignment="CENTER" prefHeight="68.0" prefWidth="347.0" style="-fx-font-weight: bold;" text="All Order Status" textFill="WHITE">
                                        <font>
-                                          <Font size="24.0" />
+                                          <Font name="Segoe UI" size="22.0" />
                                        </font>
                                     </Label>
-                                    <RadioButton fx:id="toggler" mnemonicParsing="false" onMouseClicked="#change" prefHeight="68.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Pending Orders Only" wrapText="true">
+                                    <RadioButton fx:id="toggler" mnemonicParsing="false" onMouseClicked="#change" prefHeight="68.0" prefWidth="187.0" style="-fx-font-weight: bold;" text="Pending Orders Only" textFill="WHITE" wrapText="true">
                                        <font>
-                                          <Font size="18.0" />
+                                          <Font name="Segoe UI" size="22.0" />
                                        </font>
                                     </RadioButton>
                                  </children>
@@ -227,9 +218,18 @@
                                        <children>
                                           <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="246.0" spacing="20.0">
                                              <children>
-                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="94.0" style="-fx-font-weight: bold;" text="Order No." />
-                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="247.0" style="-fx-font-weight: bold;" text="Customer Name" />
-                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Order Status" />
+                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="94.0" style="-fx-font-weight: bold;" text="Order No.">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="18.0" />
+                                                   </font></Label>
+                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="247.0" style="-fx-font-weight: bold;" text="Customer Name">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="18.0" />
+                                                   </font></Label>
+                                                <Label alignment="CENTER" prefHeight="52.0" prefWidth="113.0" style="-fx-font-weight: bold;" text="Order Status">
+                                                   <font>
+                                                      <Font name="Segoe UI" size="18.0" />
+                                                   </font></Label>
                                              </children>
                                           </HBox>
                                        </children></VBox>
@@ -242,7 +242,7 @@
                                  <children>
                                     <Label alignment="CENTER" prefHeight="68.0" prefWidth="377.0" style="-fx-font-weight: bold;" text="Update Order Status">
                                        <font>
-                                          <Font size="30.0" />
+                                          <Font name="Segoe UI" size="22.0" />
                                        </font>
                                     </Label>
                                  </children>
@@ -251,7 +251,7 @@
                                  <children>
                                     <Label alignment="CENTER" prefHeight="31.0" prefWidth="234.0" text="Order To Be Updated" textFill="#f2e6e6" wrapText="true">
                                        <font>
-                                          <Font size="16.0" />
+                                          <Font name="Segoe UI Bold" size="20.0" />
                                        </font></Label>
                                     <TextField fx:id="to_be_updated_order" alignment="CENTER" prefHeight="27.0" prefWidth="158.0" />
                                  </children>
@@ -259,13 +259,16 @@
                                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                  </padding>
                               </HBox>
-                              <Button mnemonicParsing="false" onMouseClicked="#update_order" prefHeight="34.0" prefWidth="148.0" text="Update Order">
+                              <Button mnemonicParsing="false" onMouseClicked="#update_order" prefHeight="34.0" prefWidth="148.0" styleClass="add-btn" stylesheets="@style.css" text="Update Order">
                                  <font>
-                                    <Font size="16.0" />
+                                    <Font name="Segoe UI" size="18.0" />
                                  </font>
                                  <opaqueInsets>
                                     <Insets bottom="20.0" right="20.0" top="20.0" />
-                                 </opaqueInsets></Button>
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin></Button>
                            </children>
                         </VBox>
                      </children>

@@ -9,16 +9,16 @@
 }
 
 .card {
-    -fx-background-color: #F7DBF0;
+    -fx-background-color: #E8E8CC;
     -fx-background-radius: 10;
 }
 
 .primary-bg1 {
-    -fx-background-color: #712B75;
+    -fx-background-color: #064635;
 }
 
 .primary-bg2 {
-    -fx-background-color: #C996CC;
+    -fx-background-color: #F0BB62;
 }
 
 .sidebar1 {
@@ -107,7 +107,7 @@
 }
 
 .chosen-item-card{
-    -fx-background-color: #F16C31;
+    -fx-background-color: #B33030;
     -fx-background-radius: 30;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .add-btn{
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #FFF8D9;
     -fx-background-radius: 100;
 }
 
