@@ -77,7 +77,7 @@ public class Take_Orders_Controller {
         }
         scrollpane.setContent(v);
     }
-    public void taking_orders(){
+    public void taking_orders(MouseEvent e)throws IOException{
         String customer_name = name.getText();
         Map<Dish,Integer> dish_count = new HashMap<Dish,Integer>();
         offline.setIndeterminate(false);
@@ -89,13 +89,11 @@ public class Take_Orders_Controller {
             CheckBox c = (CheckBox) x.getChildren().get(0);
             TextField t = (TextField) x.getChildren().get(1);
             Label l = (Label) x.getChildren().get(2);
-
             String s = t.getText();
-
-            if((s!= "" || s!="0") && c.isSelected()==true){
+//            System.out.println(s);
+            if(s.compareTo("")!= 0 && s.compareTo("0")!=0 && c.isSelected()==true){
 
                 Dish d = man.menu.check_dishes.get(c.getText());
-
                 try {
                     dish_count.put(d, Integer.valueOf(s));
                 }catch (NumberFormatException p){
@@ -105,6 +103,7 @@ public class Take_Orders_Controller {
 
             }
         }
+//        System.out.println(dish_count.size());
         if(yes==false)show_alert();
         else if(dish_count.size()==0)show_alert();
         else if(online.isSelected()==true && offline.isSelected()==true)show_alert();
@@ -113,7 +112,7 @@ public class Take_Orders_Controller {
             man.take_offline_order(man.index,discount,customer_name,dish_count);
             man.index++;
             man.calculate_sales_and_orders_insight();
-//            man.calculate_sales_and_orders_insight();
+            dtoc.go_to_take_orders(e);
         }
         else if(online.isSelected()==true){
             Integer discount = cal_discount(discount_on_order.getText());
@@ -123,23 +122,11 @@ public class Take_Orders_Controller {
                 man.take_online_order(man.index, discount, customer_name, address, dish_count);
                 man.index++;
                 man.calculate_sales_and_orders_insight();
+                dtoc.go_to_take_orders(e);
             }
         }
         else show_alert();
-        if(online.isSelected()==true)online.fire();
-        if(offline.isSelected()==true)offline.fire();
-        name.clear();
-        address_or_table_num.clear();
-        discount_on_order.clear();
-        for(int i = 0; i < v.getChildren().size(); i++){
-            HBox x = (HBox) v.getChildren().get(i);
-            CheckBox c = (CheckBox) x.getChildren().get(0);
-            TextField t = (TextField) x.getChildren().get(1);
-            if(c.isSelected()==true){
-                c.fire();
-            }
-            t.clear();
-        }
+
     }
     public void go_back_to_dashboard(ActionEvent e) throws IOException {
         FXMLLoader loader= new FXMLLoader(getClass().getResource("dashboard.fxml"));
@@ -206,7 +193,6 @@ public class Take_Orders_Controller {
         alert.setHeaderText("Wrong Information");// line 3
         alert.setContentText("Information that was provided is incorrect please check again");// line 4
         alert.showAndWait();
-
     }
 }
 

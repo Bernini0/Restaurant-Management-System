@@ -150,21 +150,13 @@ public class Menu_Controller {
             description.setMinSize(225,-1);
             VBox v = new VBox();
             try {
-//                System.out.println(d.getImgSrc());
                 var img2 = new Image(getClass().getResource(d.getImgSrc()).toString(),120.0,70,false,false);
-//                System.out.println(description.getHeight());
                 ImageView im = new ImageView(img2);
                 v.setAlignment(Pos.TOP_LEFT);
-//                im.setFitHeight(description.getHeight());
-//                im.setFitWidth(140);
-//                im.
                 v.getChildren().add(im);
             }catch (IllegalArgumentException x){
                 System.out.println("haha");
             }
-//            v.setPrefSize(120,70);
-//            v.setMaxSize(120,700);
-//            v.setMinSize(120,10);
             v.setAlignment(Pos.TOP_LEFT);
             sl.setAlignment(Pos.CENTER);
             food.setAlignment(Pos.CENTER);

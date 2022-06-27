@@ -67,7 +67,6 @@ public class Manager {
     public void update_order(Integer id){
         all_order_collection.update(id);
         System.out.println("all order collection updated");
-        Order current_order=all_order_collection.all_orders.get(id);
     }
 
 
@@ -75,7 +74,6 @@ public class Manager {
         return (a*(0.2));
     }
     public void calculate_sales_and_orders_insight(){
-//        setting(today_sale,today_order_count,on_the_way,total_sale_online,total_cost_online,total_sale_onsite,total_cost_onsite,net_loss_onsite,net_profit_onsite,net_profit_online,net_loss_online,online_order_count,onsite_order_count,onsite_delivered_order_count,online_delivared_order_count);
         today_sale = 0;
         today_order_count = 0;
         on_the_way = 0;
@@ -90,11 +88,9 @@ public class Manager {
         onsite_order_count = 0;
         online_order_count = 0;
         online_delivared_order_count = 0;
-        online_delivared_order_count = 0;
         for(int i =0; i < all_order_collection.all_orders.size(); i++){
             Order o = all_order_collection.all_orders.get(i);
             today_sale+= o.total;
-            System.out.println(o.total);
             today_order_count++;
             if(o.getIsDelivered()==false)on_the_way++;
             else{
@@ -110,7 +106,6 @@ public class Manager {
                 onsite_order_count++;
             }
         }
-        System.out.println(today_sale);
         net_loss_onsite = net_loss_online = 0;
         net_profit_onsite = (int) profit((double)total_sale_onsite);
         net_profit_online = (int) profit((double) total_sale_online);

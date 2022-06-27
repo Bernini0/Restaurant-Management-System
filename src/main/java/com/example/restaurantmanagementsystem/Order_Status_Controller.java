@@ -118,7 +118,7 @@ public class Order_Status_Controller {
             customer_name.setWrapText(true);
             Integer i = entry.getKey();
             Label order_id = new Label();
-            order_id.setText(String.valueOf(i));
+            order_id.setText(String.valueOf(i+1));
             order_id.setPrefSize(94,-1);
             order_id.setMaxSize(94,-1);
             order_id.setMinSize(94,-1);

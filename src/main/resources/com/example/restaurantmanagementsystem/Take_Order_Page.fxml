@@ -262,21 +262,26 @@
                               <TextField fx:id="discount_on_order" maxWidth="-Infinity" prefHeight="36.0" prefWidth="720.0" />
                            </children>
                         </VBox>
-                        <ScrollPane fx:id="scrollpane" prefHeight="299.0" prefWidth="968.0">
-                           <content>
-                              <VBox fx:id="v" prefHeight="295.0" prefWidth="1004.0">
+                        <VBox prefHeight="301.0" prefWidth="1020.0">
+                           <children>
+                              <HBox prefHeight="30.0" prefWidth="1020.0" spacing="20.0">
                                  <children>
-                                    <HBox prefHeight="30.0" prefWidth="1004.0" spacing="20.0">
-                                       <children>
-                                          <Label prefHeight="16.0" prefWidth="228.0" text="Name" />
-                                          <Label prefHeight="19.0" prefWidth="336.0" text="Amount" />
-                                          <Label prefHeight="16.0" prefWidth="341.0" text="Price" />
-                                       </children>
-                                    </HBox>
-                                 </children></VBox>
-                           </content>
-                        </ScrollPane>
-                        <Button mnemonicParsing="false" onAction="#taking_orders" text="Order" />
+                                    <Label maxWidth="228.0" minWidth="228.0" prefWidth="228.0" text="Name" textFill="#fcf3f3" />
+                                    <Label maxWidth="336.0" minWidth="336.0" prefWidth="336.0" text="Amount" textFill="#f8f3f3" />
+                                    <Label maxWidth="341.0" minWidth="341.0" prefWidth="341.0" text="Price" textFill="#fff8f8" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="20.0" />
+                                 </padding>
+                              </HBox>
+                              <ScrollPane fx:id="scrollpane" prefHeight="299.0" prefWidth="968.0">
+                                 <content>
+                                    <VBox fx:id="v" prefHeight="295.0" prefWidth="1004.0" />
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                        <Button mnemonicParsing="false" onMouseClicked="#taking_orders" text="Order" />
                      </children>
                      <VBox.margin>
                         <Insets left="20.0" right="20.0" />
