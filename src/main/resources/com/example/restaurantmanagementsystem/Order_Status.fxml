@@ -209,9 +209,9 @@
                            <children>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Label alignment="CENTER" prefHeight="68.0" prefWidth="347.0" style="-fx-font-weight: bold;" text="All Order Status">
+                                    <Label fx:id="order_status_label" alignment="CENTER" prefHeight="68.0" prefWidth="347.0" style="-fx-font-weight: bold;" text="All Order Status">
                                        <font>
-                                          <Font size="30.0" />
+                                          <Font size="24.0" />
                                        </font>
                                     </Label>
                                     <RadioButton fx:id="toggler" mnemonicParsing="false" onMouseClicked="#change" prefHeight="68.0" prefWidth="136.0" style="-fx-font-weight: bold;" text="Pending Orders Only" wrapText="true">

@@ -41,6 +41,8 @@ public class Order_Status_Controller {
 
     @FXML
     private TextField search1;
+    @FXML
+    private Label order_status_label;
 
     @FXML
     private RadioButton toggler;
@@ -135,6 +137,7 @@ public class Order_Status_Controller {
         Order_Status_Controller o_s_c = loader.getController();
         if(x==true){
             o_s_c.set_scrollpane(2);
+            o_s_c.setOrder_status_label("Pending Order Status");
         }
         else{
              o_s_c.set_scrollpane(1);
@@ -169,4 +172,5 @@ public class Order_Status_Controller {
             Show.dis_play(root, e);
         }
     }
+    public void setOrder_status_label(String s){order_status_label.setText(s);}
 }
