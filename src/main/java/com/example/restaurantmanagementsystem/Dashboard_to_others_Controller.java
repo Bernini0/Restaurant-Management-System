@@ -149,10 +149,8 @@ public class Dashboard_to_others_Controller {
     }
     public void go_to_logout(MouseEvent e) throws IOException{
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        Show s = new Show();
-        s.display(stage,"Login_Page.fxml");
+        stage.close();
     }
-
     public void set_money(String s){money.setText(s);}
     public void set_sales1(String s){sales1.setText(s);}
     public void set_sales11(String s){sales11.setText(s);}

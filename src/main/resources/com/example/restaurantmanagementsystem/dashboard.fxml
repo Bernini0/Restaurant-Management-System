@@ -130,6 +130,23 @@
                         </Button>
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0" spacing="5.0" styleClass="primary-bg2" stylesheets="@style.css">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/logout.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="sales2" mnemonicParsing="false" onMouseClicked="#go_to_logout" prefHeight="30.0" prefWidth="160.0" styleClass="primary-bg2" stylesheets="@style.css" text="Exit">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
                <padding>
                   <Insets left="20.0" right="20.0" />
