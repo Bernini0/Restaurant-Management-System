@@ -147,7 +147,7 @@ public class Order_Status_Controller {
     }
     public void update_order(MouseEvent e)throws IOException{
         Integer i = Integer.valueOf(to_be_updated_order.getText());
-        man.update_order(i);
+        man.update_order(i-1);
         change(e);
     }
     public void search(MouseEvent e) throws IOException{
