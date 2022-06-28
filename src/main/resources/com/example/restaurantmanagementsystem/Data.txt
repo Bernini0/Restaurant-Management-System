@@ -1,9 +1,21 @@
-2
-Waffles
-200
-d
-images/waffle.jpg
-Bento
-12
-ads
+5
+Bento Box
+550
+Rice dish with fried toppings
 images/bento.jpg
+Bibimbap
+400
+Rice with soup and toppings
+images/bibimbap.jpg
+Chicken Curry
+600
+Curry dish served with naan
+images/chicken_curry.jpg
+English Breakfast
+500
+Classic platter with eggs and sausages
+images/engbf.jpg
+Hot Chocolate
+300
+Chocolate drink with marshmallows
+images/hotchoc.jpg

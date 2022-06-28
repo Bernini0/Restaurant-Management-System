@@ -135,7 +135,7 @@ public class Menu_Controller {
         vbox.setSpacing(20.0);
         for(int i = 0; i < man.menu.all_dishes.size(); i++){
             Label sl = new Label();
-            sl.setText(String.valueOf(i));
+            sl.setText(String.valueOf(i + 1));
             sl.setPrefSize(50,-1);
             sl.setMaxSize(50,-1);
             sl.setMinSize(50,-1);
@@ -185,7 +185,7 @@ public class Menu_Controller {
                 man.menu.add_dish(name, price, description, img_src);
                 dtoc.go_to_menu_page(e);
             }catch(NumberFormatException x) {
-                System.out.println("not number");
+                System.out.println("Not a Number");
                 show_alert();
             }
         }
@@ -220,7 +220,7 @@ public class Menu_Controller {
             var img2 = new Image(getClass().getResource(src).toString());
             return true;
         }catch (Exception x) {
-            System.out.println("haha1");
+            System.out.println("Invalid Image Source");
             return false;
         }
 
