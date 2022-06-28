@@ -88,6 +88,7 @@ public class Manager {
         onsite_order_count = 0;
         online_order_count = 0;
         online_delivared_order_count = 0;
+        onsite_delivered_order_count = 0;
         for(int i =0; i < all_order_collection.all_orders.size(); i++){
             Order o = all_order_collection.all_orders.get(i);
             today_sale+= o.total;
